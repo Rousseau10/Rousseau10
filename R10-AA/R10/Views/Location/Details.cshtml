@@ -1,0 +1,302 @@
+﻿@model R10.Models.Location
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Location</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Acc.Acc_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Acc.Acc_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Loc_Begin_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Loc_Begin_Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Loc_End_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Loc_End_Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Active)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Active)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.City)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.City)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.State_Province_Territory)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.State_Province_Territory)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Country)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Postal_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Postal_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact1_FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1_FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact1_LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1_LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact1_Role)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1_Role)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact1_Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1_Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact1_Cell)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1_Cell)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact2_FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact2_FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact2_LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact2_LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact2_Role)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact2_Role)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact2_Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact2_Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contact2_Cell)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact2_Cell)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Owner_FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner_FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Owner_LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner_LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Owner_Cell)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner_Cell)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Owner_Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner_Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location_Office_Phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location_Office_Phone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location_Bar_Phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location_Bar_Phone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email_for_Sales_Report)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email_for_Sales_Report)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Notes1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Notes1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Notes2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Notes2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Comments)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comments)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tax_Percente_State)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tax_Percente_State)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tax_Percente_County)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tax_Percente_County)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tax_Percente_Other)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tax_Percente_Other)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Split_Percent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Split_Percent)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Record_Modify_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Record_Modify_Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Modifiers_Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Modifiers_Login)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Data_Is_Dummy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data_Is_Dummy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Flagged_for_Deletion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Flagged_for_Deletion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<R10.Models.Machine>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>New Worksheet</h2>
+
+<div class="ws_wrap">
+    <div id="ws_Selection">
+      
+     
+      @Html.DropDownList("Location_Code", String.Empty)
+            @*@Html.ValidationMessageFor(model => model.Location_Code)*@
+        
+           
+        
+
+
+       </div>@*ws_Selection*@
+
+       @* <div>
+            @Html.DisplayNameFor(model => model.Machine_ID)
+        </div>
+        <div>
+            @Html.DisplayNameFor(model => model.Machine_ID)
+        </div>
+        <div>
+            @Html.DisplayNameFor(model => model.Alias)
+        </div>
+        <div>
+            @Html.DisplayNameFor(model => model.Machine_Name)
+        </div>
+        <div>
+            @Html.DisplayNameFor(model => model.Machine_Class)
+        </div>*@
+  
+        
+
+@*@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Machine_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Alias)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Flagged_for_Deletion)
+        </td>*@
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}*@
+
+
+</div>@*ws_wrap*@
+<p>p element - it got to the view</p>

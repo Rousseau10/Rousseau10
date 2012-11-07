@@ -1,0 +1,88 @@
+﻿@model IEnumerable<R10.Models.WorkOut>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.workout_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeadLift_final_set_Max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deadlift_Max_Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ABS_Max_total_reps)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ABS_Max_total_reps_wieght)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ABS_Max_2Min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bench_max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bench_final_set_Max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bench_Max_wieght)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PushUp_final_Set_max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Push_ups_Max_2min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Biceps_curls_final_set_Max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Biceps_curls_Wieght)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Biceps_Plate_final_set_Max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Biceps_plate_Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TBack_final_set_max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TBack_Max_Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Delt_Mil_press_final_Set_Max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Delt_Mil_Press_Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deltiod_2Min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Obliques_final_rep_Max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Obligues_Wieght)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Run_3_sprint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Run_2mile_timed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataISDumy)
+        </td>
+        <td class="rowControl hidden">
+            <a href="#makeRowEditable" class="makeRowEditable">Edit</a> |
+            <a href="#deleteRow" class="deleteRow">Delete</a>
+        </td>
+    </tr>
+}

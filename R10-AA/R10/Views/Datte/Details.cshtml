@@ -1,0 +1,36 @@
+﻿@model R10.Models.Test_DateTime2_GetDate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Test_DateTime2_GetDate</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Id_PK_not_seed_nullable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id_PK_not_seed_nullable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dt_datetime2_GetDate_nullable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dt_datetime2_GetDate_nullable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.comments_nulable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.comments_nulable)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id_PK_not_seed_nullable }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,71 @@
+﻿@model R10.Models.Test_Date_Types
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Test_Date_Types</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.comments)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.comments)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dt_time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dt_time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dt_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dt_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dt_datetime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dt_datetime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dt_datetime2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dt_datetime2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mod_Time_datetime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mod_Time_datetime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mod_Time_datetime2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mod_Time_datetime2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Modifiers_Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Modifiers_Login)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

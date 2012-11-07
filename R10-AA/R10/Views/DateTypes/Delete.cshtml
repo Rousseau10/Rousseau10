@@ -1,0 +1,74 @@
+﻿@model R10.Models.Test_Date_Types
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Test_Date_Types</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.comments)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.comments)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dt_time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dt_time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dt_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dt_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dt_datetime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dt_datetime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dt_datetime2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dt_datetime2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mod_Time_datetime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mod_Time_datetime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mod_Time_datetime2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mod_Time_datetime2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Modifiers_Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Modifiers_Login)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

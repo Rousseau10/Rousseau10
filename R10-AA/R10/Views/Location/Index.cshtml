@@ -1,0 +1,273 @@
+﻿@model IEnumerable<R10.Models.Location>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Location_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acc.Acc_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loc_Begin_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loc_End_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State_Province_Territory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Postal_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact1_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact1_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact1_Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact1_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact1_Cell)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact2_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact2_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact2_Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact2_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact2_Cell)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_Cell)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location_Office_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location_Bar_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email_for_Sales_Report)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tax_Percente_State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tax_Percente_County)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tax_Percente_Other)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Split_Percent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Record_Modify_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modifiers_Login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Is_Dummy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flagged_for_Deletion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acc.Acc_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loc_Begin_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loc_End_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State_Province_Territory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Postal_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact1_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact1_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact1_Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact1_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact1_Cell)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact2_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact2_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact2_Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact2_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact2_Cell)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner_Cell)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location_Office_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location_Bar_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email_for_Sales_Report)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tax_Percente_State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tax_Percente_County)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tax_Percente_Other)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Split_Percent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Record_Modify_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modifiers_Login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_Is_Dummy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flagged_for_Deletion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

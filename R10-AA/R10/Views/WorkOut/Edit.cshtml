@@ -1,0 +1,115 @@
+﻿@model R10.Models.WorkOut
+
+<tr>
+   @* <td>
+        @Html.EditorFor(model => model.workout_ID)
+        @Html.ValidationMessageFor(model => model.workout_ID)
+    </td>*@
+    <td>
+        @Html.EditorFor(model => model.Date)
+        @Html.ValidationMessageFor(model => model.Date)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.DeadLift_final_set_Max)
+        @Html.ValidationMessageFor(model => model.DeadLift_final_set_Max)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Deadlift_Max_Weight)
+        @Html.ValidationMessageFor(model => model.Deadlift_Max_Weight)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.ABS_Max_total_reps)
+        @Html.ValidationMessageFor(model => model.ABS_Max_total_reps)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.ABS_Max_total_reps_wieght)
+        @Html.ValidationMessageFor(model => model.ABS_Max_total_reps_wieght)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.ABS_Max_2Min)
+        @Html.ValidationMessageFor(model => model.ABS_Max_2Min)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Bench_max)
+        @Html.ValidationMessageFor(model => model.Bench_max)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Bench_final_set_Max)
+        @Html.ValidationMessageFor(model => model.Bench_final_set_Max)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Bench_Max_wieght)
+        @Html.ValidationMessageFor(model => model.Bench_Max_wieght)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.PushUp_final_Set_max)
+        @Html.ValidationMessageFor(model => model.PushUp_final_Set_max)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Push_ups_Max_2min)
+        @Html.ValidationMessageFor(model => model.Push_ups_Max_2min)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Biceps_curls_final_set_Max)
+        @Html.ValidationMessageFor(model => model.Biceps_curls_final_set_Max)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Biceps_curls_Wieght)
+        @Html.ValidationMessageFor(model => model.Biceps_curls_Wieght)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Biceps_Plate_final_set_Max)
+        @Html.ValidationMessageFor(model => model.Biceps_Plate_final_set_Max)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Biceps_plate_Weight)
+        @Html.ValidationMessageFor(model => model.Biceps_plate_Weight)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.TBack_final_set_max)
+        @Html.ValidationMessageFor(model => model.TBack_final_set_max)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.TBack_Max_Weight)
+        @Html.ValidationMessageFor(model => model.TBack_Max_Weight)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Delt_Mil_press_final_Set_Max)
+        @Html.ValidationMessageFor(model => model.Delt_Mil_press_final_Set_Max)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Delt_Mil_Press_Weight)
+        @Html.ValidationMessageFor(model => model.Delt_Mil_Press_Weight)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Deltiod_2Min)
+        @Html.ValidationMessageFor(model => model.Deltiod_2Min)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Obliques_final_rep_Max)
+        @Html.ValidationMessageFor(model => model.Obliques_final_rep_Max)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Obligues_Wieght)
+        @Html.ValidationMessageFor(model => model.Obligues_Wieght)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Run_3_sprint)
+        @Html.ValidationMessageFor(model => model.Run_3_sprint)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Run_2mile_timed)
+        @Html.ValidationMessageFor(model => model.Run_2mile_timed)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.DataISDumy)
+        @Html.ValidationMessageFor(model => model.DataISDumy)
+    </td>
+    <td>
+@if (ViewContext.RouteData.Values["Action"].ToString() == "Edit") {
+        <button class="editRow">Save</button><button class="cancelEditRow">Cancel</button>
+} else {
+        <button class="createRow">Create</button><button class="cancelCreateRow">Cancel</button>
+}
+    </td>
+</tr>

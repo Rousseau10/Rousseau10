@@ -1,0 +1,312 @@
+﻿@model R10.Models.Location
+
+@{
+    ViewBag.Title = "Location Details";
+}
+
+<h2 class="viewFormsHeader">Location Details</h2>
+
+<fieldset>
+    <legend>Location</legend>
+    @*<div class="formLabels">
+            Name        
+        </div>*@
+
+    @*<div class=formLabels>
+         Location_ID)
+    </div>*@
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location_ID)
+    </div>
+
+    <div class=formLabels>
+         Location Name
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location_Name)
+    </div>
+
+    <div class=formLabels>
+         Location Code
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location_Code)
+    </div>
+
+   
+    <div class=formLabels>
+         Account Code
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Account_Code)
+    </div> 
+
+    <div class=formLabels>
+         Loc Begin Date
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Loc_Begin_Date)
+   </div> 
+
+
+     <div class=formLabels>
+         Loc End Date
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Loc_End_Date)
+    </div> 
+
+
+   <div class=formLabels>
+         Is Active
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Active)
+    </div> 
+
+
+
+    <div class=formLabels>
+         Address1
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address1)
+    </div>
+
+    <div class=formLabels>
+         Address2
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address2)
+    </div>
+
+    <div class=formLabels>
+         City
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.City)
+    </div>
+
+    <div class=formLabels>
+         State Province Territory
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.State_Province_Territory)
+    </div>
+
+    <div class=formLabels>
+         Country
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country)
+    </div>
+
+    <div class=formLabels>
+         Postal Code
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Postal_Code)
+    </div>
+
+    <div class=formLabels>
+         Cont1 FirstName
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1_FirstName)
+    </div>
+
+    <div class=formLabels>
+         Cont1 LastName
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1_LastName)
+    </div>
+
+    <div class=formLabels>
+         Cont1 Role
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1_Role)
+    </div>
+
+    <div class=formLabels>
+         Cont1 Email
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1_Email)
+    </div>
+
+    <div class=formLabels>
+         Cont1 Cell
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact1_Cell)
+    </div>
+
+    <div class=formLabels>
+         Cont2 FirstName
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact2_FirstName)
+    </div>
+
+    <div class=formLabels>
+         Cont2 LastName
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact2_LastName)
+    </div>
+
+    <div class=formLabels>
+         Cont2 Role
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact2_Role)
+    </div>
+
+    <div class=formLabels>
+         Cont2 Email
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact2_Email)
+    </div>
+
+    <div class=formLabels>
+         Cont2 Cell
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contact2_Cell)
+    </div>
+
+    <div class=formLabels>
+         Owner FirstName
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner_FirstName)
+    </div>
+
+    <div class=formLabels>
+         Owner LastName
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner_LastName)
+    </div>
+
+    <div class=formLabels>
+         Owner Cell
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner_Cell)
+    </div>
+
+    <div class=formLabels>
+         Owner Email
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner_Email)
+    </div>
+
+    <div class=formLabels>
+         Location Office Phone
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location_Office_Phone)
+    </div>
+
+    <div class=formLabels>
+         Location Bar Phone
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location_Bar_Phone)
+    </div>
+
+    <div class=formLabels>
+         Email for Sales Report
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email_for_Sales_Report)
+    </div>
+
+    <div class=formLabels>
+         Notes1
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Notes1)
+    </div>
+
+    <div class=formLabels>
+         Notes2
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Notes2)
+    </div>
+
+    <div class=formLabels>
+         Comments
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comments)
+    </div>
+
+   
+
+    <div class=formLabels>
+         Tax Percente State
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tax_Percente_State)
+    </div>
+
+    <div class=formLabels>
+         Tax Percente County
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tax_Percente_County)
+    </div>
+
+    <div class=formLabels>
+         Tax Percente Other
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tax_Percente_Other)
+    </div>
+
+    <div class=formLabels>
+         Split Percent
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Split_Percent)
+    </div>
+
+    <div class=formLabels>
+         Record Modify Date
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Record_Modify_Date)
+    </div>
+
+    <div class=formLabels>
+         Modifiers Login
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Modifiers_Login)
+    </div>
+
+    <div class=formLabels>
+         Data Is Dummy
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data_Is_Dummy)
+    </div>
+
+    <div class=formLabels>
+         Flagged for Deletion
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Flagged_for_Deletion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

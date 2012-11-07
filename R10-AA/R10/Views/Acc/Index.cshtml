@@ -1,0 +1,219 @@
+﻿@model IEnumerable<R10.Models.Acc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Acc_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acc_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acc_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Begin_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.End_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acc_Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State_Province_Territory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Postal_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_Cell)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acc_Office_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acc_Office_Fax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other_Office_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other_Office_Fax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POC_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POC_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POC_Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POC_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POC_Cell)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Record_Modify_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modifiers_Login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Is_Dummy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flagged_for_Deletion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acc_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acc_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acc_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Begin_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.End_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acc_Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State_Province_Territory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Postal_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner_Cell)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acc_Office_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acc_Office_Fax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other_Office_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other_Office_Fax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POC_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POC_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POC_Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POC_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POC_Cell)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Record_Modify_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modifiers_Login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_Is_Dummy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flagged_for_Deletion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
