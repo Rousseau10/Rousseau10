@@ -1,0 +1,249 @@
+﻿@model IEnumerable<R10.Models.Interview>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interview_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lead_Source)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staffing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interviewer1_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interviewer1_Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interviewer2_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interviewer2_Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interviewer3_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interviewer3_Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interviewer_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interview_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HR_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HR_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recuiter_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recuiter_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interview_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Test_Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tech_Q_A)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Negotiation_Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Improvements)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Got_Job)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comp_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comp_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comp_URL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.How_Ended)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interview_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Place)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lead_Source)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staffing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interviewer1_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interviewer1_Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interviewer2_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interviewer2_Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interviewer3_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interviewer3_Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interviewer_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interview_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HR_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HR_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recuiter_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recuiter_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interview_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Test_Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tech_Q_A)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Negotiation_Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Improvements)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Got_Job)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comp_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comp_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comp_URL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.How_Ended)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

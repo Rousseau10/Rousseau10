@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8FB1261-4BDE-4AAB-AD94-575192F9A80B}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>R10</RootNamespace>
+    <AssemblyName>R10</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+<includesetaclproviderondestination>False</includesetaclproviderondestination>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+<includesetaclproviderondestination>False</includesetaclproviderondestination>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DateTypesController.cs" />
+    <Compile Include="Controllers\DatteController.cs" />
+    <Compile Include="Controllers\Got_NumberController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InterviewController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\LU_MachineClassController.cs" />
+    <Compile Include="Controllers\MachineController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\WorkOutController.cs" />
+    <Compile Include="Controllers\WorkSheetController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acc.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Interview.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Location.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LU_MachineClass.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Machine.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.designer.cs">
+      <DependentUpon>Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Test_DateTime2_GetDate.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Test_Date_Types.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Test_SQL_DataTypes.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WorkOut.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Workout_Got_Number.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\AA_Footer.png" />
+    <Content Include="Images\AA_Header_final.png" />
+    <Content Include="Images\accounting-software-DOllar_onTop.jpg" />
+    <Content Include="Images\accounting-software_laptOp%29disc.jpg" />
+    <Content Include="Images\accountingSoftware_360.png" />
+    <Content Include="Images\aspNetHome.png" />
+    <Content Include="Images\default.html" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\findHosting.png" />
+    <Content Include="Images\hand_and_laptop.jpg" />
+    <Content Include="Images\hand_and_laptop_red.gif" />
+    <Content Include="Images\hd_original.gif" />
+    <Content Include="Images\NuGetGallery.png" />
+    <Content Include="Images\orderedListOne.png" />
+    <Content Include="Images\orderedListThree.png" />
+    <Content Include="Images\orderedListTwo.png" />
+    <Content Include="Images\styleAAWEBFORMS.css" />
+    <Content Include="Images\success.gif" />
+    <Content Include="Images\success.jpg" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\windowsLive.png" />
+    <Content Include="sql_Scripts\4_Main\Location\Location sp_UPDATE_Delete_Flag_Location.sql" />
+    <Content Include="sql_Scripts\4_Main\Location\Location_Modify_Stored_procedures.sql" />
+    <Content Include="sql_Scripts\4_Main\Location\Location_Modify_Stored_procedures_WIP.sql" />
+    <Content Include="sql_Scripts\4_Main\Location\Location_UPDATE.sql" />
+    <Content Include="sql_Scripts\4_Main\Location\Mach_Count_Modify_Stored_procedures.sql" />
+    <Content Include="sql_Scripts\4_Main\Location\sp_UPDATE_Delete_Flag_Location.sql" />
+    <Content Include="sql_Scripts\4_Main\Loc_Count\Location_Count_sp_Insert_WIP.sql" />
+    <Content Include="sql_Scripts\4_Main\Loc_Count\Loc_Count_UPDATE.sql" />
+    <Content Include="sql_Scripts\4_Main\Loc_Count\Loc_Count_UpDate_SPROC_USAGE.sql" />
+    <Content Include="sql_Scripts\4_Main\Loc_Count\Mach_Count sp_UPDATE_Delete_Flag_Mach_Count.sql" />
+    <Content Include="sql_Scripts\4_Main\Loc_Count\sp_UPDATE_Delete_Flag_Loc_Count .sql" />
+    <Content Include="sql_Scripts\4_Main\Machine\Machine sp_UPDATE_Delete_Flag_Machine.sql" />
+    <Content Include="sql_Scripts\4_Main\Machine\Machine_Modify_Stored_procedures.sql" />
+    <Content Include="sql_Scripts\4_Main\Machine\Machine_Modify_Stored_procedures_WIP.sql" />
+    <Content Include="sql_Scripts\4_Main\Machine\Machine_Set_DELETE_FLAG.sql" />
+    <Content Include="sql_Scripts\4_Main\Machine\Machine_UPDATE.sql" />
+    <Content Include="sql_Scripts\4_Main\Machine\Machine_UpDate_SPROC_USAGE.sql" />
+    <Content Include="sql_Scripts\4_Main\Machine\sp_UPDATE_Delete_Flag_Machine.sql" />
+    <Content Include="sql_Scripts\4_Main\Mach_Count\Mach_Count_Modify_Stored_procedures_WIP.sql" />
+    <Content Include="sql_Scripts\4_Main\Mach_Count\sp_UPDATE_Delete_Flag_Mach_Count .sql" />
+    <Content Include="sql_Scripts\Administrative Scripts\Administrative_Scripts.sql" />
+    <Content Include="sql_Scripts\All tables\ALL_Delete_Flagged_Records.sql" />
+    <Content Include="sql_Scripts\Data population scripts\Cutstom_1Million_records_NotFInishedWIP.sql" />
+    <Content Include="sql_Scripts\Data population scripts\insert thousand of records using while loop.sql" />
+    <Content Include="sql_Scripts\Data population scripts\Insert_4_DummyData.sql" />
+    <Content Include="sql_Scripts\Data population scripts\Insert_4_DummyDataWIP.sql" />
+    <Content Include="sql_Scripts\Data population scripts\Insert_4_DummyData_WIP.sql" />
+    <Content Include="sql_Scripts\Data population scripts\New_Dummy_records_Since_Acc_added.sql" />
+    <Content Include="sql_Scripts\Data population scripts\usp_Select_for_Worksheet_RUD.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\AA_DB_WINHOST_j26_Al_haveDateTome2_RowVersion.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\AA_db_winhost_v1.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\AA_db_winhost_v2.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\AA_db_winhost_v3.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\AA_db_winhost_v3_WIP.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\AA_db_winhost_v5_all_objects_Before_new_compoisit_primary_key.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\AA_db_winhost_v6__after_addng_dummy_data.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\AA_DL_OBJECTS_and_Test_Data_J23_2012.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\Account_Location_IsActive_AFTER_TRIGGER.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\All_Tables_functions_DAta_J23.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\Location_AND ACCOUNT_TABLE_J3_Account_BeginDate_and END_Date.sql" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\Sp_Drop_and_ReCreate_4_main_and_Dummy_Data.sql" />
+    <Content Include="sql_Scripts\Expenses_Monthly\Expenses_Monthly sp_UPDATE_Delete_Flag_Expenses_Monthly.sql" />
+    <Content Include="sql_Scripts\Expenses_Monthly\Expenses_Monthly sp_UPDATE_Expenses_Monthly.sql" />
+    <Content Include="sql_Scripts\Expenses_Monthly\Mach_Count sp_Mach_Count_UPDATE .sql" />
+    <Content Include="sql_Scripts\Functions MISC\Function_fn_GetLoginOfSPID.sql" />
+    <Content Include="sql_Scripts\misc\Blogging SPROCS.sql" />
+    <Content Include="sql_Scripts\misc\Files into varchar%28Max%29 AND nvarchar%28MAX%294000 characters .sql" />
+    <Content Include="sql_Scripts\misc\Population_loop_WorkOut.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuer5y8.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery12.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery2.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery34.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery5.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery510.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery516.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery517.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery519.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery523.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery524.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery529.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery531.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery535.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery55.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery56.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery57.sql" />
+    <Content Include="sql_Scripts\misc\SQLQuery8.sql" />
+    <Content Include="sql_Scripts\misc\SQLQueryj26.sql" />
+    <Content Include="sql_Scripts\misc\SQLQueryj26DROPS.sql" />
+    <Content Include="sql_Scripts\misc\SQLQueryj26Truncates.sql" />
+    <Content Include="sql_Scripts\misc\zz_Parent_CHild_Manual_cascading_deletes_and_Updates.sql" />
+    <Content Include="sql_Scripts\skills\%40table variable.sql" />
+    <Content Include="sql_Scripts\skills\2_Types_of_Triggers.sql" />
+    <Content Include="sql_Scripts\skills\All_SKILLS.sql" />
+    <Content Include="sql_Scripts\skills\common table expression.sql" />
+    <Content Include="sql_Scripts\skills\CRUD stored procedure template OPTIONAL PArms.sql" />
+    <Content Include="sql_Scripts\skills\datetime styles.sql" />
+    <Content Include="sql_Scripts\skills\Files into varchar%28Max%29 AND nvarchar%28MAX%294000 characters .sql" />
+    <Content Include="sql_Scripts\skills\OutPut parm for sprocs.sql" />
+    <Content Include="sql_Scripts\skills\SCOPE_IDENTITY%28%29_%40%40IDENTITY_IDENT_CURRENT%28%27tableName%27%29.sql" />
+    <Content Include="sql_Scripts\skills\TABLE and CRUD stored procedure template OPTIONAL PArms.sql" />
+    <Content Include="sql_Scripts\skills\WorkSheet OutPut_identity_parm_being_used_by_child_table_insert.sql" />
+    <Content Include="sql_Scripts\Test\sp_Test_Table_Update.sql" />
+    <Content Include="sql_Scripts\Test\Test_Loc_Count_no_nulls.sql" />
+    <Content Include="sql_Scripts\Triggers\AA_SHow_DEV_Triggers.sql" />
+    <Content Include="sql_Scripts\Triggers\ALL_AA_Triggers_AFTER_Show_after_Modify.sql" />
+    <Content Include="sql_Scripts\Triggers\IS_ACTIVE.sql" />
+    <Content Include="sql_Scripts\Triggers\Triggers_Before_After_learning_script.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery13.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery16.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery17.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery19.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery2.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery3.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery400.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery7772.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery9.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery91.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery92.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery93.sql" />
+    <Content Include="sql_Scripts\UnNamed scripts\SQLQuery95.sql" />
+    <Content Include="sql_Scripts\Utility Scripts\Insert_Command_Generator.sql" />
+    <Content Include="sql_Scripts\views\Insert_Into_view.sql" />
+    <Content Include="sql_Scripts\WorkSheet\Below joins all 5.sql" />
+    <Content Include="sql_Scripts\WorkSheet\vw_WORKSHEET_SELECT_Previous_Counts.sql" />
+    <Content Include="sql_Scripts\WorkSheet\WorkSheet OutPut_identity_parm_being_used_by_child_table_insert.sql" />
+    <Content Include="sql_Scripts\WorkSheet\WorkSheet OutPut_identity_parm_being_used_by_looping_child_table_insert_6-1.sql" />
+    <Content Include="sql_Scripts\WorkSheet\WorkSheet OutPut_identity_parm_value from _Loc_Count_col_Loc_Count_ID_being_used_by_Mach_Countchild_table_insert.sql" />
+    <Content Include="sql_Scripts\WorkSheet\WorkSheet sp_INSERT_Save_Worksheet.sql" />
+    <Content Include="sql_Scripts\WorkSheet\WOrkSheet_Insert_Save_v2.sql" />
+    <Content Include="sql_Scripts\WorkSheet\WorkSheet_Multiple_Insert_Into_Child_Using_sp_executesql_6-1.sql" />
+    <Content Include="sql_Scripts\WorkSheet\WorkSheet_Selects_guide.sql" />
+    <Content Include="zOrigAA\Images for Action AMusement site\EntityDesignerDiagram.jpg" />
+    <Content Include="zOrigAA\Images for Action AMusement site\images shows it works with cpu_laptop_tablet_smartphone.JPG" />
+    <Content Include="zOrigAA\Images for Action AMusement site\red_and_white_triange_USE.PNG" />
+    <Content Include="zOrigAA\JQWidgets\JQWidget_ideas.txt" />
+    <Content Include="Models\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\AA_Footer.xcf" />
+    <Content Include="Images\AA_Header_final.xcf" />
+    <Content Include="Images\image for Video tutorial page.xcf" />
+    <Content Include="Images\imageforVideo tutorage.xcf" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="zOrigAA\Documentation\Web_Pages.vsd" />
+    <Content Include="zOrigAA\DB\AAProd.bak" />
+    <Content Include="zOrigAA\DB\AATest.bak" />
+    <Content Include="sql_Scripts\Drop Recreate Objects Scripts\AA_DL_OBJECTS_and_Test_Data_J23_2012.zip" />
+    <Content Include="Views\Acc\Create.cshtml" />
+    <Content Include="Views\Acc\Delete.cshtml" />
+    <Content Include="Views\Acc\Details.cshtml" />
+    <Content Include="Views\Acc\Edit.cshtml" />
+    <Content Include="Views\Acc\Index.cshtml" />
+    <Content Include="Views\DateTypes\Create.cshtml" />
+    <Content Include="Views\DateTypes\Delete.cshtml" />
+    <Content Include="Views\DateTypes\Details.cshtml" />
+    <Content Include="Views\DateTypes\Edit.cshtml" />
+    <Content Include="Views\DateTypes\Index.cshtml" />
+    <Content Include="Views\Datte\Create.cshtml" />
+    <Content Include="Views\Datte\Delete.cshtml" />
+    <Content Include="Views\Datte\Details.cshtml" />
+    <Content Include="Views\Datte\Edit.cshtml" />
+    <Content Include="Views\Datte\Index.cshtml" />
+    <Content Include="Views\Got_Number\Edit.cshtml" />
+    <Content Include="Views\Got_Number\GridData.cshtml" />
+    <Content Include="Views\Got_Number\Index.cshtml" />
+    <Content Include="Views\Interview\Create.cshtml" />
+    <Content Include="Views\Interview\Delete.cshtml" />
+    <Content Include="Views\Interview\Details.cshtml" />
+    <Content Include="Views\Interview\Edit.cshtml" />
+    <Content Include="Views\Interview\Index.cshtml" />
+    <Content Include="Views\LocationOLD\Create.cshtml" />
+    <Content Include="Views\LocationOLD\Delete.cshtml" />
+    <Content Include="Views\LocationOLD\Details.cshtml" />
+    <Content Include="Views\LocationOLD\Edit.cshtml" />
+    <Content Include="Views\LocationOLD\Index.cshtml" />
+    <Content Include="Views\Location\Create.cshtml" />
+    <Content Include="Views\Location\Delete.cshtml" />
+    <Content Include="Views\Location\Details.cshtml" />
+    <Content Include="Views\Location\Edit.cshtml" />
+    <Content Include="Views\Location\Index.cshtml" />
+    <Content Include="Views\LU_MachineClass\Create.cshtml" />
+    <Content Include="Views\LU_MachineClass\Delete.cshtml" />
+    <Content Include="Views\LU_MachineClass\Details.cshtml" />
+    <Content Include="Views\LU_MachineClass\Edit.cshtml" />
+    <Content Include="Views\LU_MachineClass\Index.cshtml" />
+    <Content Include="Views\Machine\Create.cshtml" />
+    <Content Include="Views\Machine\Delete.cshtml" />
+    <Content Include="Views\Machine\Details.cshtml" />
+    <Content Include="Views\Machine\Edit.cshtml" />
+    <Content Include="Views\Machine\Index.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\WorkOut\Edit.cshtml" />
+    <Content Include="Views\WorkOut\GridData.cshtml" />
+    <Content Include="Views\WorkOut\Index.cshtml" />
+    <Content Include="Views\WorkSheet\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="sql_Scripts\checks\" />
+    <Folder Include="THISIS_AA_movedintovs2010Mvc4\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7833</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7602/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

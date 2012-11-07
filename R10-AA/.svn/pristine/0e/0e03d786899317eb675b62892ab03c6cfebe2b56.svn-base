@@ -1,0 +1,48 @@
+widgets USE ideas. 
+-docking or drag n drop can be used for machine count order
+
+
+-USe the built in tooltip
+
+-scrolbar
+
+-progress bar
+
+--numberInput
+
+--masked input - Maybe?
+--* I also installed jquery validation from the nuget
+
+--many menus especially context IE right click AND default functionality
+
+--menu mobile
+
+--tree selector mobile
+
+
+--gridcreateremoveupdate ***maybe what I will go with
+
+--gridmobile
+
+--gridfiltering
+
+--grid virtual data like look s like can sum or average like reporting
+
+-gauge really cool maybe to see if he made enough 
+--gauge linear OOORRRR if the meters matched up section
+
+
+
+
+
+
+on dads from nuget installed
+json.net,
+jquery UI (combined library) including 3 base themes
+Modernizer
+Nunit 2.6
+ EF 4.3, 
+ELHAM, 
+jquery validation,
+and KNowoutjs for rich widgets
+ vovs default  browser switcher )needed go go to online

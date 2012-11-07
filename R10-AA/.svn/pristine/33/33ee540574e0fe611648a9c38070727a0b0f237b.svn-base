@@ -1,0 +1,232 @@
+﻿@model R10.Models.Machine
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Machine</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Machine_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Machine_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Alias)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Alias)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Machine_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Machine_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LU_MachineClass.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LU_MachineClass.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Machine_Owner_FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Machine_Owner_FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Machine_Owner_LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Machine_Owner_LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Manufacturer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Manufacturer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Purchased_From)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Purchased_From)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Purchase_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Purchase_Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Purchase_Details)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Purchase_Details)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Model)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Serial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Serial)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cost)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cost)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Shipping_Costs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Shipping_Costs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Additional_Cost)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Additional_Cost)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Additional_Costs_Details)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Additional_Costs_Details)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Warranty_Details)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Warranty_Details)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Warranty_Expiration_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Warranty_Expiration_Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Keys_1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Keys_1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Keys_2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Keys_2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Keys_3)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Keys_3)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Keys_4)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Keys_4)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.External_Key)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.External_Key)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Machine_Count_Order)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Machine_Count_Order)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Machine_Notes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Machine_Notes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Machine_Comments)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Machine_Comments)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location.Location_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location.Location_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Record_Modify_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Record_Modify_Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Modifiers_Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Modifiers_Login)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Data_Is_Dummy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data_Is_Dummy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Flagged_for_Deletion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Flagged_for_Deletion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

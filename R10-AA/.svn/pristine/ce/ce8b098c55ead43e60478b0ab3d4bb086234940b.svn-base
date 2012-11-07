@@ -1,0 +1,141 @@
+﻿@model R10.Models.Workout_Got_Number
+
+<tr @if (Model != null) {
+    @:data-pkey="@Model.ID"
+}>
+    <td>
+        @Html.EditorFor(model => model.Date)
+        @Html.ValidationMessageFor(model => model.Date)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Day)
+        @Html.ValidationMessageFor(model => model.Day)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Time)
+        @Html.ValidationMessageFor(model => model.Time)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Place)
+        @Html.ValidationMessageFor(model => model.Place)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Approach)
+        @Html.ValidationMessageFor(model => model.Approach)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Method)
+        @Html.ValidationMessageFor(model => model.Method)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Rank)
+        @Html.ValidationMessageFor(model => model.Rank)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.M_Detials)
+        @Html.ValidationMessageFor(model => model.M_Detials)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Drink)
+        @Html.ValidationMessageFor(model => model.Drink)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Smoke)
+        @Html.ValidationMessageFor(model => model.Smoke)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Card)
+        @Html.ValidationMessageFor(model => model.Card)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Get_No)
+        @Html.ValidationMessageFor(model => model.Get_No)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Touch)
+        @Html.ValidationMessageFor(model => model.Touch)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Improve)
+        @Html.ValidationMessageFor(model => model.Improve)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Com)
+        @Html.ValidationMessageFor(model => model.Com)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.FName)
+        @Html.ValidationMessageFor(model => model.FName)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.LName)
+        @Html.ValidationMessageFor(model => model.LName)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Nick)
+        @Html.ValidationMessageFor(model => model.Nick)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Avail)
+        @Html.ValidationMessageFor(model => model.Avail)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Duration)
+        @Html.ValidationMessageFor(model => model.Duration)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.HomeAdd)
+        @Html.ValidationMessageFor(model => model.HomeAdd)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.WorkAdd)
+        @Html.ValidationMessageFor(model => model.WorkAdd)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.NonVacAdd)
+        @Html.ValidationMessageFor(model => model.NonVacAdd)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.BornIn)
+        @Html.ValidationMessageFor(model => model.BornIn)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Money)
+        @Html.ValidationMessageFor(model => model.Money)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Age)
+        @Html.ValidationMessageFor(model => model.Age)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Eyes)
+        @Html.ValidationMessageFor(model => model.Eyes)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Other)
+        @Html.ValidationMessageFor(model => model.Other)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Smoker)
+        @Html.ValidationMessageFor(model => model.Smoker)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Mobile)
+        @Html.ValidationMessageFor(model => model.Mobile)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.OtherNo)
+        @Html.ValidationMessageFor(model => model.OtherNo)
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </td>
+    <td>
+@if (ViewContext.RouteData.Values["Action"].ToString() == "Edit") {
+        <button class="editRow">Save</button><button class="cancelEditRow">Cancel</button>
+} else {
+        <button class="createRow">Create</button><button class="cancelCreateRow">Cancel</button>
+}
+    </td>
+</tr>

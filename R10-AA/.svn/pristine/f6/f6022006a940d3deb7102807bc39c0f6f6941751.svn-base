@@ -5,8 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R10", "R10\R10.csproj", "{F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63F52330-CC9F-4C65-8102-FE29D15154E7}"
 	ProjectSection(SolutionItems) = preProject
-		AA_AlgoRythms.txt = AA_AlgoRythms.txt
-		Notes.txt = Notes.txt
+		..\..\..\Users\Adam Development\Documents\Visual Studio 2012\Projects\WIPS\AA\AA_MVC_WorkingCopy_branch_MajorDev\AA_AlgoRythms.txt = ..\..\..\Users\Adam Development\Documents\Visual Studio 2012\Projects\WIPS\AA\AA_MVC_WorkingCopy_branch_MajorDev\AA_AlgoRythms.txt
 	EndProjectSection
 EndProject
 Global

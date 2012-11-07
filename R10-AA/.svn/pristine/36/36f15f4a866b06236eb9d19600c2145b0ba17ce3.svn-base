@@ -1,0 +1,213 @@
+﻿@model IEnumerable<R10.Models.Machine>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Machine_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Alias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Machine_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LU_MachineClass.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Machine_Owner_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Machine_Owner_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Purchased_From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Purchase_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Purchase_Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shipping_Costs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Additional_Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Additional_Costs_Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Warranty_Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Warranty_Expiration_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Keys_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Keys_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Keys_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Keys_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.External_Key)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Machine_Count_Order)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Machine_Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Machine_Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location.Location_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Record_Modify_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modifiers_Login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Is_Dummy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flagged_for_Deletion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Machine_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Alias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Machine_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LU_MachineClass.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Machine_Owner_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Machine_Owner_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Manufacturer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchased_From)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchase_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchase_Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shipping_Costs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Additional_Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Additional_Costs_Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Warranty_Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Warranty_Expiration_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Keys_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Keys_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Keys_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Keys_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.External_Key)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Machine_Count_Order)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Machine_Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Machine_Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location.Location_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Record_Modify_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modifiers_Login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_Is_Dummy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flagged_for_Deletion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

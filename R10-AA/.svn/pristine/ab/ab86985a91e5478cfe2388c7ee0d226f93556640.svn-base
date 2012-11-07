@@ -1,0 +1,2434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Action_Amusements_WinhostModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Action_Amusements_WinhostModelStoreContainer">
+          <EntitySet Name="Acc" EntityType="Action_Amusements_WinhostModel.Store.Acc" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Interviews" EntityType="Action_Amusements_WinhostModel.Store.Interviews" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Location" EntityType="Action_Amusements_WinhostModel.Store.Location" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LU_MachineClass" EntityType="Action_Amusements_WinhostModel.Store.LU_MachineClass" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Machine" EntityType="Action_Amusements_WinhostModel.Store.Machine" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Test_Date_Types" EntityType="Action_Amusements_WinhostModel.Store.Test_Date_Types" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Test_DateTime2_GetDate" EntityType="Action_Amusements_WinhostModel.Store.Test_DateTime2_GetDate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Test_SQL_DataTypes" EntityType="Action_Amusements_WinhostModel.Store.Test_SQL_DataTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkOut" EntityType="Action_Amusements_WinhostModel.Store.WorkOut" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Workout_Got_Number" EntityType="Action_Amusements_WinhostModel.Store.Workout_Got_Number" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Location_Acc" Association="Action_Amusements_WinhostModel.Store.FK_Location_Acc">
+            <End Role="Acc" EntitySet="Acc" />
+            <End Role="Location" EntitySet="Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Machine_Location" Association="Action_Amusements_WinhostModel.Store.FK_Machine_Location">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="Machine" EntitySet="Machine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Machine_LU_MachineClass" Association="Action_Amusements_WinhostModel.Store.FK_Machine_LU_MachineClass">
+            <End Role="LU_MachineClass" EntitySet="LU_MachineClass" />
+            <End Role="Machine" EntitySet="Machine" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Acc">
+          <Key>
+            <PropertyRef Name="Acc_Code" />
+          </Key>
+          <Property Name="Acc_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Acc_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Acc_Code" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Begin_Date" Type="date" Nullable="false" />
+          <Property Name="End_Date" Type="date" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Acc_Details" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State_Province_Territory" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Postal_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner_FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner_LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner_Cell" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Acc_Office_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Acc_Office_Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Other_Office_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Other_Office_Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="POC_FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="POC_LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="POC_Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="POC_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="POC_Cell" Type="nvarchar" MaxLength="50" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="250" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="250" />
+          <Property Name="Record_Modify_Date" Type="datetime2" />
+          <Property Name="Modifiers_Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data_Is_Dummy" Type="bit" />
+          <Property Name="Flagged_for_Deletion" Type="bit" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Interviews">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Interview_Number" Type="int" />
+          <Property Name="Day" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Place" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lead_Source" Type="nvarchar" MaxLength="50" />
+          <Property Name="Staffing" Type="bit" />
+          <Property Name="Interviewer1_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Interviewer1_Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="Interviewer2_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Interviewer2_Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="Interviewer3_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Interviewer3_Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="Interviewer_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Interview_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="HR_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="HR_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Recuiter_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Recuiter_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Other_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Other_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Interview_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_Details" Type="nvarchar" MaxLength="200" />
+          <Property Name="Tech_Q_A" Type="nvarchar" MaxLength="200" />
+          <Property Name="Negotiation_Details" Type="nvarchar" MaxLength="200" />
+          <Property Name="Details" Type="nvarchar" MaxLength="200" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="200" />
+          <Property Name="Improvements" Type="nvarchar" MaxLength="200" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="200" />
+          <Property Name="Got_Job" Type="bit" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pay" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comp_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comp_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comp_URL" Type="nvarchar" MaxLength="50" />
+          <Property Name="Duration" Type="varchar" MaxLength="50" />
+          <Property Name="How_Ended" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Location_Code" />
+          </Key>
+          <Property Name="Location_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Location_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Location_Code" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Acc_Code" Type="nvarchar" MaxLength="25" />
+          <Property Name="Loc_Begin_Date" Type="date" Nullable="false" />
+          <Property Name="Loc_End_Date" Type="date" />
+          <Property Name="Is_Active" Type="bit" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State_Province_Territory" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Postal_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact1_FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact1_LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact1_Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact1_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact1_Cell" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact2_FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact2_LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact2_Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact2_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact2_Cell" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner_FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner_LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner_Cell" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Location_Office_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Location_Bar_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email_for_Sales_Report" Type="nvarchar" MaxLength="50" />
+          <Property Name="Notes1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Notes2" Type="nvarchar" MaxLength="250" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="250" />
+          <Property Name="Tax_Percente_State" Type="nvarchar" MaxLength="10" />
+          <Property Name="Tax_Percente_County" Type="nvarchar" MaxLength="10" />
+          <Property Name="Tax_Percente_Other" Type="nvarchar" MaxLength="10" />
+          <Property Name="Split_Percent" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Record_Modify_Date" Type="datetime2" />
+          <Property Name="Modifiers_Login" Type="varchar" MaxLength="50" />
+          <Property Name="Data_Is_Dummy" Type="bit" />
+          <Property Name="Flagged_for_Deletion" Type="bit" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="LU_MachineClass">
+          <Key>
+            <PropertyRef Name="ClassCode" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="ClassCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Machine">
+          <Key>
+            <PropertyRef Name="Alias" />
+          </Key>
+          <Property Name="Machine_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Alias" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Machine_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Machine_Class" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Machine_Owner_FirstName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Machine_Owner_LastName" Type="nvarchar" MaxLength="30" />
+          <Property Name="Manufacturer" Type="nvarchar" MaxLength="50" />
+          <Property Name="Purchased_From" Type="nvarchar" MaxLength="50" />
+          <Property Name="Purchase_Date" Type="date" />
+          <Property Name="Purchase_Details" Type="nvarchar" MaxLength="200" />
+          <Property Name="Model" Type="nvarchar" MaxLength="30" />
+          <Property Name="Serial" Type="nvarchar" MaxLength="80" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="Shipping_Costs" Type="money" />
+          <Property Name="Additional_Cost" Type="money" />
+          <Property Name="Additional_Costs_Details" Type="nvarchar" MaxLength="200" />
+          <Property Name="Warranty_Details" Type="nvarchar" MaxLength="200" />
+          <Property Name="Warranty_Expiration_Date" Type="date" />
+          <Property Name="Keys_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Keys_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Keys_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Keys_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="External_Key" Type="nvarchar" MaxLength="50" />
+          <Property Name="Machine_Count_Order" Type="int" />
+          <Property Name="Machine_Notes" Type="nvarchar" MaxLength="200" />
+          <Property Name="Machine_Comments" Type="nvarchar" MaxLength="200" />
+          <Property Name="Location_Code" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Record_Modify_Date" Type="datetime2" />
+          <Property Name="Modifiers_Login" Type="varchar" MaxLength="50" />
+          <Property Name="Data_Is_Dummy" Type="bit" />
+          <Property Name="Flagged_for_Deletion" Type="bit" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Test_Date_Types">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="comments" Type="nvarchar(max)" />
+          <Property Name="dt_time" Type="time" />
+          <Property Name="dt_date" Type="date" />
+          <Property Name="dt_datetime" Type="datetime" />
+          <Property Name="dt_datetime2" Type="datetime2" />
+          <Property Name="dt_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="Mod_Time_datetime" Type="datetime" />
+          <Property Name="Mod_Time_datetime2" Type="datetime2" />
+          <Property Name="Modifiers_Login" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Test_DateTime2_GetDate">
+          <Key>
+            <PropertyRef Name="Id_PK_not_seed_nullable" />
+          </Key>
+          <Property Name="Id_PK_not_seed_nullable" Type="int" Nullable="false" />
+          <Property Name="dt_datetime2_GetDate_nullable" Type="datetime2" />
+          <Property Name="comments_nulable" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Test_SQL_DataTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="dt_Time" Type="time" />
+          <Property Name="dt_datetime" Type="date" />
+          <Property Name="dt_Varchar" Type="varchar" MaxLength="20" />
+          <Property Name="dt_Nvarchar" Type="nvarchar" MaxLength="20" />
+          <Property Name="dt_char_4" Type="char" MaxLength="4" />
+          <Property Name="dt_Nvarchar_MAX_COMMENTS" Type="nvarchar(max)" />
+          <Property Name="dt_Bit" Type="bit" />
+          <Property Name="dt_Decimal_10_4" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="dt_Money" Type="money" />
+          <Property Name="dt_Image" Type="image" />
+          <Property Name="dt_Numeric_10_3" Type="numeric" Precision="10" Scale="4" />
+        </EntityType>
+        <EntityType Name="WorkOut">
+          <Key>
+            <PropertyRef Name="workout_ID" />
+            <PropertyRef Name="Date" />
+          </Key>
+          <Property Name="workout_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="DeadLift_final_set_Max" Type="smallint" />
+          <Property Name="Deadlift_Max_Weight" Type="smallint" />
+          <Property Name="ABS_Max_total_reps" Type="smallint" />
+          <Property Name="ABS_Max_total_reps_wieght" Type="smallint" />
+          <Property Name="ABS_Max_2Min" Type="smallint" />
+          <Property Name="Bench_max" Type="smallint" />
+          <Property Name="Bench_final_set_Max" Type="smallint" />
+          <Property Name="Bench_Max_wieght" Type="smallint" />
+          <Property Name="PushUp_final_Set_max" Type="smallint" />
+          <Property Name="Push_ups_Max_2min" Type="smallint" />
+          <Property Name="Biceps_curls_final_set_Max" Type="smallint" />
+          <Property Name="Biceps_curls_Wieght" Type="smallint" />
+          <Property Name="Biceps_Plate_final_set_Max" Type="smallint" />
+          <Property Name="Biceps_plate_Weight" Type="smallint" />
+          <Property Name="TBack_final_set_max" Type="smallint" />
+          <Property Name="TBack_Max_Weight" Type="smallint" />
+          <Property Name="Delt_Mil_press_final_Set_Max" Type="smallint" />
+          <Property Name="Delt_Mil_Press_Weight" Type="smallint" />
+          <Property Name="Deltiod_2Min" Type="bit" />
+          <Property Name="Obliques_final_rep_Max" Type="smallint" />
+          <Property Name="Obligues_Wieght" Type="smallint" />
+          <Property Name="Run_3_sprint" Type="bit" />
+          <Property Name="Run_2mile_timed" Type="time" />
+          <Property Name="DataISDumy" Type="bit" />
+        </EntityType>
+        <EntityType Name="Workout_Got_Number">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Day" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Place" Type="nvarchar" MaxLength="50" />
+          <Property Name="Approach" Type="nvarchar" MaxLength="50" />
+          <Property Name="Method" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rank" Type="nvarchar" MaxLength="50" />
+          <Property Name="M_Detials" Type="nvarchar" MaxLength="200" />
+          <Property Name="Drink" Type="bit" />
+          <Property Name="Smoke" Type="bit" />
+          <Property Name="Card" Type="bit" />
+          <Property Name="Get_No" Type="bit" />
+          <Property Name="Touch" Type="nvarchar" MaxLength="100" />
+          <Property Name="Improve" Type="nvarchar" MaxLength="200" />
+          <Property Name="Com" Type="nvarchar" MaxLength="200" />
+          <Property Name="FName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nick" Type="nvarchar" MaxLength="50" />
+          <Property Name="Avail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Duration" Type="nvarchar" MaxLength="50" />
+          <Property Name="HomeAdd" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkAdd" Type="nvarchar" MaxLength="50" />
+          <Property Name="NonVacAdd" Type="nvarchar" MaxLength="50" />
+          <Property Name="BornIn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Money" Type="nvarchar" MaxLength="50" />
+          <Property Name="Age" Type="nvarchar" MaxLength="50" />
+          <Property Name="Eyes" Type="nvarchar" MaxLength="50" />
+          <Property Name="Other" Type="nvarchar" MaxLength="200" />
+          <Property Name="Smoker" Type="bit" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Location_Acc">
+          <End Role="Acc" Type="Action_Amusements_WinhostModel.Store.Acc" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Location" Type="Action_Amusements_WinhostModel.Store.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Acc">
+              <PropertyRef Name="Acc_Code" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="Acc_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Machine_Location">
+          <End Role="Location" Type="Action_Amusements_WinhostModel.Store.Location" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Machine" Type="Action_Amusements_WinhostModel.Store.Machine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Location_Code" />
+            </Principal>
+            <Dependent Role="Machine">
+              <PropertyRef Name="Location_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Machine_LU_MachineClass">
+          <End Role="LU_MachineClass" Type="Action_Amusements_WinhostModel.Store.LU_MachineClass" Multiplicity="1" />
+          <End Role="Machine" Type="Action_Amusements_WinhostModel.Store.Machine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_MachineClass">
+              <PropertyRef Name="ClassCode" />
+            </Principal>
+            <Dependent Role="Machine">
+              <PropertyRef Name="Machine_Class" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_GetLoginOfSPID" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Insert_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Location_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Location_Code" Type="varchar" Mode="In" />
+          <Parameter Name="Account_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Account_Code" Type="varchar" Mode="In" />
+          <Parameter Name="Address1" Type="varchar" Mode="In" />
+          <Parameter Name="Address2" Type="varchar" Mode="In" />
+          <Parameter Name="City" Type="varchar" Mode="In" />
+          <Parameter Name="State_Province_Territory" Type="varchar" Mode="In" />
+          <Parameter Name="Country" Type="varchar" Mode="In" />
+          <Parameter Name="Postal_Code" Type="varchar" Mode="In" />
+          <Parameter Name="Contact1_FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="Contact1_LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Contact1_Role" Type="varchar" Mode="In" />
+          <Parameter Name="Contact1_Email" Type="varchar" Mode="In" />
+          <Parameter Name="Contact1_Cell" Type="varchar" Mode="In" />
+          <Parameter Name="Contact2_FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="Contact2_LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Contact2_Role" Type="varchar" Mode="In" />
+          <Parameter Name="Contact2_Email" Type="varchar" Mode="In" />
+          <Parameter Name="Contact2_Cell" Type="varchar" Mode="In" />
+          <Parameter Name="Owner_FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="Owner_LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Owner_Cell" Type="varchar" Mode="In" />
+          <Parameter Name="Owner_Email" Type="varchar" Mode="In" />
+          <Parameter Name="Location_Office_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Location_Bar_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Email_for_Sales_Report" Type="varchar" Mode="In" />
+          <Parameter Name="Notes1" Type="varchar" Mode="In" />
+          <Parameter Name="Notes2" Type="varchar" Mode="In" />
+          <Parameter Name="Comments" Type="varchar" Mode="In" />
+          <Parameter Name="Location_Is_Active" Type="bit" Mode="In" />
+          <Parameter Name="Tax_Percente_State" Type="varchar" Mode="In" />
+          <Parameter Name="Tax_Percente_County" Type="varchar" Mode="In" />
+          <Parameter Name="Tax_Percente_Other" Type="varchar" Mode="In" />
+          <Parameter Name="Split_Percent" Type="varchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_Insert_Machine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Alias" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Class" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Owner_FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Owner_LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Manufacturer" Type="varchar" Mode="In" />
+          <Parameter Name="Purchased_From" Type="varchar" Mode="In" />
+          <Parameter Name="Purchase_Date" Type="datetime" Mode="In" />
+          <Parameter Name="Purchase_Details" Type="varchar" Mode="In" />
+          <Parameter Name="Model" Type="varchar" Mode="In" />
+          <Parameter Name="Serial" Type="varchar" Mode="In" />
+          <Parameter Name="Cost" Type="money" Mode="In" />
+          <Parameter Name="Shipping_Costs" Type="money" Mode="In" />
+          <Parameter Name="Additional_Cost" Type="money" Mode="In" />
+          <Parameter Name="Additional_Costs_Details" Type="varchar" Mode="In" />
+          <Parameter Name="Warranty_Details" Type="varchar" Mode="In" />
+          <Parameter Name="Warranty_Expiration_Date" Type="datetime" Mode="In" />
+          <Parameter Name="Keys_1" Type="varchar" Mode="In" />
+          <Parameter Name="Keys_2" Type="varchar" Mode="In" />
+          <Parameter Name="Keys_3" Type="varchar" Mode="In" />
+          <Parameter Name="Keys_4" Type="varchar" Mode="In" />
+          <Parameter Name="External_Key" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Count_Order" Type="int" Mode="In" />
+          <Parameter Name="Machine_Notes" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Comments" Type="varchar" Mode="In" />
+          <Parameter Name="Location_Code" Type="varchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_Lookup_Mach_Class" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Lookup_Transaction_Type" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Truncate_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Truncate_Location_Count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Truncate_Location_History" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Truncate_Mach_Count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Truncate_Machine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Truncate_Machine_History" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Truncate_Monthly_Expenses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_UPDATE_Delete_Flag_Expenses_Monthly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Expenses_Monthly_ID" Type="int" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_UPDATE_Delete_Flag_Loc_Count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Location_ID" Type="int" Mode="In" />
+          <Parameter Name="Loc_Count_Date" Type="date" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_UPDATE_Delete_Flag_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Location_ID" Type="int" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_UPDATE_Delete_Flag_Mach_Count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Machine_ID" Type="int" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_UPDATE_Delete_Flag_Machine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Machine_ID" Type="int" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_UPDATE_Expenses_Monthly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Expenses_Monthly_ID" Type="int" Mode="In" />
+          <Parameter Name="Sellor" Type="varchar" Mode="In" />
+          <Parameter Name="invoice" Type="varchar" Mode="In" />
+          <Parameter Name="Year_Month" Type="date" Mode="In" />
+          <Parameter Name="Supply" Type="varchar" Mode="In" />
+          <Parameter Name="Cost" Type="money" Mode="In" />
+          <Parameter Name="Tax" Type="money" Mode="In" />
+          <Parameter Name="Shipping_Cost" Type="money" Mode="In" />
+          <Parameter Name="Pay_Method" Type="varchar" Mode="In" />
+          <Parameter Name="Asset" Type="varchar" Mode="In" />
+          <Parameter Name="Details" Type="varchar" Mode="In" />
+          <Parameter Name="Notes" Type="varchar" Mode="In" />
+          <Parameter Name="Comments" Type="varchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_UPDATE_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Location_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Location_Code" Type="varchar" Mode="In" />
+          <Parameter Name="Account_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Account_Code" Type="varchar" Mode="In" />
+          <Parameter Name="Address1" Type="varchar" Mode="In" />
+          <Parameter Name="Address2" Type="varchar" Mode="In" />
+          <Parameter Name="City" Type="varchar" Mode="In" />
+          <Parameter Name="State_Province_Territory" Type="varchar" Mode="In" />
+          <Parameter Name="Country" Type="varchar" Mode="In" />
+          <Parameter Name="Postal_Code" Type="varchar" Mode="In" />
+          <Parameter Name="Contact1_FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="Contact1_LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Contact1_Role" Type="varchar" Mode="In" />
+          <Parameter Name="Contact1_Email" Type="varchar" Mode="In" />
+          <Parameter Name="Contact1_Cell" Type="varchar" Mode="In" />
+          <Parameter Name="Contact2_FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="Contact2_LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Contact2_Role" Type="varchar" Mode="In" />
+          <Parameter Name="Contact2_Email" Type="varchar" Mode="In" />
+          <Parameter Name="Contact2_Cell" Type="varchar" Mode="In" />
+          <Parameter Name="Owner_FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="Owner_LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Owner_Cell" Type="varchar" Mode="In" />
+          <Parameter Name="Owner_Email" Type="varchar" Mode="In" />
+          <Parameter Name="Location_Office_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Location_Bar_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Email_for_Sales_Report" Type="varchar" Mode="In" />
+          <Parameter Name="Notes1" Type="varchar" Mode="In" />
+          <Parameter Name="Notes2" Type="varchar" Mode="In" />
+          <Parameter Name="Comments" Type="varchar" Mode="In" />
+          <Parameter Name="Location_Is_Active" Type="bit" Mode="In" />
+          <Parameter Name="Tax_Percente_State" Type="varchar" Mode="In" />
+          <Parameter Name="Tax_Percente_County" Type="varchar" Mode="In" />
+          <Parameter Name="Tax_Percente_Other" Type="varchar" Mode="In" />
+          <Parameter Name="Split_Percent" Type="varchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_UPDATE_Mach_Count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Machine_ID" Type="int" Mode="In" />
+          <Parameter Name="CoinsIn_Cents" Type="money" Mode="In" />
+          <Parameter Name="CoinsIn_Bills" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_1" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_2_Misc" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_Total" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_1_Decription" Type="varchar" Mode="In" />
+          <Parameter Name="Adjustment_2_Misc_Decription" Type="varchar" Mode="In" />
+          <Parameter Name="Meter_Bills" Type="money" Mode="In" />
+          <Parameter Name="Meter_Cents" Type="money" Mode="In" />
+          <Parameter Name="Meter_Pieces" Type="smallint" Mode="In" />
+          <Parameter Name="Machine_Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_UPDATE_Machine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Machine_ID" Type="int" Mode="In" />
+          <Parameter Name="Alias" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Class" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Owner_FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Owner_LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Manufacturer" Type="varchar" Mode="In" />
+          <Parameter Name="Purchased_From" Type="varchar" Mode="In" />
+          <Parameter Name="Purchase_Date" Type="datetime" Mode="In" />
+          <Parameter Name="Purchase_Details" Type="varchar" Mode="In" />
+          <Parameter Name="Model" Type="varchar" Mode="In" />
+          <Parameter Name="Serial" Type="varchar" Mode="In" />
+          <Parameter Name="Cost" Type="money" Mode="In" />
+          <Parameter Name="Shipping_Costs" Type="money" Mode="In" />
+          <Parameter Name="Additional_Cost" Type="money" Mode="In" />
+          <Parameter Name="Additional_Costs_Details" Type="varchar" Mode="In" />
+          <Parameter Name="Warranty_Details" Type="varchar" Mode="In" />
+          <Parameter Name="Warranty_Expiration_Date" Type="datetime" Mode="In" />
+          <Parameter Name="Keys_1" Type="varchar" Mode="In" />
+          <Parameter Name="Keys_2" Type="varchar" Mode="In" />
+          <Parameter Name="Keys_3" Type="varchar" Mode="In" />
+          <Parameter Name="Keys_4" Type="varchar" Mode="In" />
+          <Parameter Name="External_Key" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Count_Order" Type="int" Mode="In" />
+          <Parameter Name="Machine_Notes" Type="varchar" Mode="In" />
+          <Parameter Name="Machine_Comments" Type="varchar" Mode="In" />
+          <Parameter Name="Location_Code" Type="varchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_AccDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Acc_Code" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_AccInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Acc_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Acc_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Begin_Date" Type="date" Mode="In" />
+          <Parameter Name="End_Date" Type="date" Mode="In" />
+          <Parameter Name="Is_Active" Type="bit" Mode="In" />
+          <Parameter Name="Acc_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address2" Type="nvarchar" Mode="In" />
+          <Parameter Name="City" Type="nvarchar" Mode="In" />
+          <Parameter Name="State_Province_Territory" Type="nvarchar" Mode="In" />
+          <Parameter Name="Country" Type="nvarchar" Mode="In" />
+          <Parameter Name="Postal_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_Cell" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Acc_Office_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Acc_Office_Fax" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other_Office_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other_Office_Fax" Type="nvarchar" Mode="In" />
+          <Parameter Name="POC_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="POC_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="POC_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="POC_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="POC_Cell" Type="nvarchar" Mode="In" />
+          <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comments" Type="nvarchar" Mode="In" />
+          <Parameter Name="Record_Modify_Date" Type="datetime2" Mode="In" />
+          <Parameter Name="Modifiers_Login" Type="nvarchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_AccSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Acc_Code" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_AccUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Acc_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Acc_ID" Type="int" Mode="In" />
+          <Parameter Name="Acc_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Begin_Date" Type="date" Mode="In" />
+          <Parameter Name="End_Date" Type="date" Mode="In" />
+          <Parameter Name="Is_Active" Type="bit" Mode="In" />
+          <Parameter Name="Acc_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address2" Type="nvarchar" Mode="In" />
+          <Parameter Name="City" Type="nvarchar" Mode="In" />
+          <Parameter Name="State_Province_Territory" Type="nvarchar" Mode="In" />
+          <Parameter Name="Country" Type="nvarchar" Mode="In" />
+          <Parameter Name="Postal_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_Cell" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Acc_Office_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Acc_Office_Fax" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other_Office_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other_Office_Fax" Type="nvarchar" Mode="In" />
+          <Parameter Name="POC_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="POC_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="POC_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="POC_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="POC_Cell" Type="nvarchar" Mode="In" />
+          <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comments" Type="nvarchar" Mode="In" />
+          <Parameter Name="Record_Modify_Date" Type="datetime2" Mode="In" />
+          <Parameter Name="Modifiers_Login" Type="nvarchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_DELETE_Interviews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_DELETE_Workout" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="workout_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_DELETE_Workout_Got_Number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_INSERT_Interviews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="Interview_Number" Type="int" Mode="In" />
+          <Parameter Name="Day" Type="varchar" Mode="In" />
+          <Parameter Name="Time" Type="varchar" Mode="In" />
+          <Parameter Name="Place" Type="varchar" Mode="In" />
+          <Parameter Name="Lead_Source" Type="varchar" Mode="In" />
+          <Parameter Name="Staffing" Type="bit" Mode="In" />
+          <Parameter Name="Interviewer1_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer1_Role" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer2_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer2_Role" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer3_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer3_Role" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Interview_email" Type="varchar" Mode="In" />
+          <Parameter Name="HR_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="HR_email" Type="varchar" Mode="In" />
+          <Parameter Name="Recuiter_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Recuiter_email" Type="varchar" Mode="In" />
+          <Parameter Name="Other_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Other_email" Type="varchar" Mode="In" />
+          <Parameter Name="Interview_Type" Type="varchar" Mode="In" />
+          <Parameter Name="Test_Details" Type="varchar" Mode="In" />
+          <Parameter Name="Tech_Q_A" Type="varchar" Mode="In" />
+          <Parameter Name="Negotiation_Details" Type="varchar" Mode="In" />
+          <Parameter Name="Details" Type="varchar" Mode="In" />
+          <Parameter Name="Comments" Type="varchar" Mode="In" />
+          <Parameter Name="Improvements" Type="varchar" Mode="In" />
+          <Parameter Name="Notes" Type="varchar" Mode="In" />
+          <Parameter Name="Got_Job" Type="bit" Mode="In" />
+          <Parameter Name="Position" Type="varchar" Mode="In" />
+          <Parameter Name="Pay" Type="varchar" Mode="In" />
+          <Parameter Name="Comp_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Comp_Number" Type="varchar" Mode="In" />
+          <Parameter Name="Comp_URL" Type="varchar" Mode="In" />
+          <Parameter Name="Duration" Type="varchar" Mode="In" />
+          <Parameter Name="How_Ended" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_INSERT_Workout" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="datetime" Mode="In" />
+          <Parameter Name="DeadLift_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Deadlift_Max_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_total_reps" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_total_reps_wieght" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_2Min" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_max" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_Max_wieght" Type="smallint" Mode="In" />
+          <Parameter Name="PushUp_final_Set_max" Type="smallint" Mode="In" />
+          <Parameter Name="Push_ups_Max_2min" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_curls_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_curls_Wieght" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_Plate_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_plate_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="TBack_final_set_max" Type="smallint" Mode="In" />
+          <Parameter Name="TBack_Max_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="Delt_Mil_press_final_Set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Delt_Mil_Press_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="Deltiod_2Min" Type="bit" Mode="In" />
+          <Parameter Name="Obliques_final_rep_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Obligues_Wieght" Type="smallint" Mode="In" />
+          <Parameter Name="Run_3_sprint" Type="bit" Mode="In" />
+          <Parameter Name="Run_2mile_timed" Type="time" Mode="In" />
+          <Parameter Name="DataISDumy" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_INSERT_Workout_Got_Number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="Day" Type="nvarchar" Mode="In" />
+          <Parameter Name="Time" Type="nvarchar" Mode="In" />
+          <Parameter Name="Place" Type="nvarchar" Mode="In" />
+          <Parameter Name="Approach" Type="nvarchar" Mode="In" />
+          <Parameter Name="Method" Type="nvarchar" Mode="In" />
+          <Parameter Name="Rank" Type="nvarchar" Mode="In" />
+          <Parameter Name="M_Detials" Type="nvarchar" Mode="In" />
+          <Parameter Name="Drink" Type="bit" Mode="In" />
+          <Parameter Name="Smoke" Type="bit" Mode="In" />
+          <Parameter Name="Card" Type="bit" Mode="In" />
+          <Parameter Name="Get_No" Type="bit" Mode="In" />
+          <Parameter Name="Touch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Improve" Type="nvarchar" Mode="In" />
+          <Parameter Name="Com" Type="nvarchar" Mode="In" />
+          <Parameter Name="FName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nick" Type="nvarchar" Mode="In" />
+          <Parameter Name="Avail" Type="nvarchar" Mode="In" />
+          <Parameter Name="Duration" Type="nvarchar" Mode="In" />
+          <Parameter Name="HomeAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="WorkAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="NonVacAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="BornIn" Type="nvarchar" Mode="In" />
+          <Parameter Name="Money" Type="nvarchar" Mode="In" />
+          <Parameter Name="Age" Type="nvarchar" Mode="In" />
+          <Parameter Name="Eyes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other" Type="nvarchar" Mode="In" />
+          <Parameter Name="Smoker" Type="bit" Mode="In" />
+          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="OtherNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InterviewsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InterviewsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="Interview_Number" Type="int" Mode="In" />
+          <Parameter Name="Day" Type="nvarchar" Mode="In" />
+          <Parameter Name="Time" Type="nvarchar" Mode="In" />
+          <Parameter Name="Place" Type="nvarchar" Mode="In" />
+          <Parameter Name="Lead_Source" Type="nvarchar" Mode="In" />
+          <Parameter Name="Staffing" Type="bit" Mode="In" />
+          <Parameter Name="Interviewer1_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer1_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer2_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer2_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer3_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer3_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interview_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="HR_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="HR_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Recuiter_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Recuiter_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interview_Type" Type="nvarchar" Mode="In" />
+          <Parameter Name="Test_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tech_Q_A" Type="nvarchar" Mode="In" />
+          <Parameter Name="Negotiation_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comments" Type="nvarchar" Mode="In" />
+          <Parameter Name="Improvements" Type="nvarchar" Mode="In" />
+          <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Got_Job" Type="bit" Mode="In" />
+          <Parameter Name="Position" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pay" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comp_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comp_Number" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comp_URL" Type="nvarchar" Mode="In" />
+          <Parameter Name="Duration" Type="varchar" Mode="In" />
+          <Parameter Name="How_Ended" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InterviewsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InterviewsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="Interview_Number" Type="int" Mode="In" />
+          <Parameter Name="Day" Type="nvarchar" Mode="In" />
+          <Parameter Name="Time" Type="nvarchar" Mode="In" />
+          <Parameter Name="Place" Type="nvarchar" Mode="In" />
+          <Parameter Name="Lead_Source" Type="nvarchar" Mode="In" />
+          <Parameter Name="Staffing" Type="bit" Mode="In" />
+          <Parameter Name="Interviewer1_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer1_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer2_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer2_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer3_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer3_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interviewer_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interview_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="HR_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="HR_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Recuiter_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Recuiter_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Interview_Type" Type="nvarchar" Mode="In" />
+          <Parameter Name="Test_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tech_Q_A" Type="nvarchar" Mode="In" />
+          <Parameter Name="Negotiation_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comments" Type="nvarchar" Mode="In" />
+          <Parameter Name="Improvements" Type="nvarchar" Mode="In" />
+          <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Got_Job" Type="bit" Mode="In" />
+          <Parameter Name="Position" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pay" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comp_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comp_Number" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comp_URL" Type="nvarchar" Mode="In" />
+          <Parameter Name="Duration" Type="varchar" Mode="In" />
+          <Parameter Name="How_Ended" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_LocationDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Location_Code" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_LocationInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Location_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Acc_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Loc_Begin_Date" Type="date" Mode="In" />
+          <Parameter Name="Loc_End_Date" Type="date" Mode="In" />
+          <Parameter Name="Is_Active" Type="bit" Mode="In" />
+          <Parameter Name="Address1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address2" Type="nvarchar" Mode="In" />
+          <Parameter Name="City" Type="nvarchar" Mode="In" />
+          <Parameter Name="State_Province_Territory" Type="nvarchar" Mode="In" />
+          <Parameter Name="Country" Type="nvarchar" Mode="In" />
+          <Parameter Name="Postal_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact1_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact1_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact1_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact1_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact1_Cell" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact2_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact2_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact2_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact2_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact2_Cell" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_Cell" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location_Office_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location_Bar_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email_for_Sales_Report" Type="nvarchar" Mode="In" />
+          <Parameter Name="Notes1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Notes2" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comments" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tax_Percente_State" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tax_Percente_County" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tax_Percente_Other" Type="nvarchar" Mode="In" />
+          <Parameter Name="Split_Percent" Type="nvarchar" Mode="In" />
+          <Parameter Name="Record_Modify_Date" Type="datetime2" Mode="In" />
+          <Parameter Name="Modifiers_Login" Type="varchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_LocationSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Location_Code" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_LocationUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Location_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location_ID" Type="int" Mode="In" />
+          <Parameter Name="Location_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Acc_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Loc_Begin_Date" Type="date" Mode="In" />
+          <Parameter Name="Loc_End_Date" Type="date" Mode="In" />
+          <Parameter Name="Is_Active" Type="bit" Mode="In" />
+          <Parameter Name="Address1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address2" Type="nvarchar" Mode="In" />
+          <Parameter Name="City" Type="nvarchar" Mode="In" />
+          <Parameter Name="State_Province_Territory" Type="nvarchar" Mode="In" />
+          <Parameter Name="Country" Type="nvarchar" Mode="In" />
+          <Parameter Name="Postal_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact1_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact1_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact1_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact1_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact1_Cell" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact2_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact2_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact2_Role" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact2_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact2_Cell" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_Cell" Type="nvarchar" Mode="In" />
+          <Parameter Name="Owner_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location_Office_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location_Bar_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email_for_Sales_Report" Type="nvarchar" Mode="In" />
+          <Parameter Name="Notes1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Notes2" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comments" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tax_Percente_State" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tax_Percente_County" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tax_Percente_Other" Type="nvarchar" Mode="In" />
+          <Parameter Name="Split_Percent" Type="nvarchar" Mode="In" />
+          <Parameter Name="Record_Modify_Date" Type="datetime2" Mode="In" />
+          <Parameter Name="Modifiers_Login" Type="varchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_LU_MachineClassDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="ClassCode" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_LU_MachineClassInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ClassCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="usp_LU_MachineClassSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="ClassCode" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_LU_MachineClassUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="ClassCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="usp_Mach_CountDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Mach_Count_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_Mach_CountInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Machine_ID" Type="int" Mode="In" />
+          <Parameter Name="Loc_Count_ID" Type="int" Mode="In" />
+          <Parameter Name="CoinsIn_Cents" Type="money" Mode="In" />
+          <Parameter Name="CoinsIn_Bills" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_1" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_2_Misc" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_Total" Type="money" Mode="In" />
+          <Parameter Name="CoinsIn_Total" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_1_Decription" Type="nvarchar" Mode="In" />
+          <Parameter Name="Adjustment_2_Misc_Decription" Type="nvarchar" Mode="In" />
+          <Parameter Name="Meter_Bills" Type="money" Mode="In" />
+          <Parameter Name="Meter_Cents" Type="money" Mode="In" />
+          <Parameter Name="Meter_Pieces" Type="smallint" Mode="In" />
+          <Parameter Name="Record_Modified_Date" Type="datetime" Mode="In" />
+          <Parameter Name="Modifiers_Login" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_Mach_CountSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Mach_Count_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_Mach_CountUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Mach_Count_ID" Type="int" Mode="In" />
+          <Parameter Name="Machine_ID" Type="int" Mode="In" />
+          <Parameter Name="Loc_Count_ID" Type="int" Mode="In" />
+          <Parameter Name="CoinsIn_Cents" Type="money" Mode="In" />
+          <Parameter Name="CoinsIn_Bills" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_1" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_2_Misc" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_Total" Type="money" Mode="In" />
+          <Parameter Name="CoinsIn_Total" Type="money" Mode="In" />
+          <Parameter Name="Adjustment_1_Decription" Type="nvarchar" Mode="In" />
+          <Parameter Name="Adjustment_2_Misc_Decription" Type="nvarchar" Mode="In" />
+          <Parameter Name="Meter_Bills" Type="money" Mode="In" />
+          <Parameter Name="Meter_Cents" Type="money" Mode="In" />
+          <Parameter Name="Meter_Pieces" Type="smallint" Mode="In" />
+          <Parameter Name="Record_Modified_Date" Type="datetime" Mode="In" />
+          <Parameter Name="Modifiers_Login" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_MachineDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Alias" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_MachineInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Alias" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Class" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Owner_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Owner_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Manufacturer" Type="nvarchar" Mode="In" />
+          <Parameter Name="Purchased_From" Type="nvarchar" Mode="In" />
+          <Parameter Name="Purchase_Date" Type="date" Mode="In" />
+          <Parameter Name="Purchase_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Model" Type="nvarchar" Mode="In" />
+          <Parameter Name="Serial" Type="nvarchar" Mode="In" />
+          <Parameter Name="Cost" Type="money" Mode="In" />
+          <Parameter Name="Shipping_Costs" Type="money" Mode="In" />
+          <Parameter Name="Additional_Cost" Type="money" Mode="In" />
+          <Parameter Name="Additional_Costs_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Warranty_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Warranty_Expiration_Date" Type="date" Mode="In" />
+          <Parameter Name="Keys_1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Keys_2" Type="nvarchar" Mode="In" />
+          <Parameter Name="Keys_3" Type="nvarchar" Mode="In" />
+          <Parameter Name="Keys_4" Type="nvarchar" Mode="In" />
+          <Parameter Name="External_Key" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Count_Order" Type="int" Mode="In" />
+          <Parameter Name="Machine_Notes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Comments" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Record_Modify_Date" Type="datetime2" Mode="In" />
+          <Parameter Name="Modifiers_Login" Type="varchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_MachineSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Alias" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_MachineUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Alias" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_ID" Type="int" Mode="In" />
+          <Parameter Name="Machine_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Class" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Owner_FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Owner_LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Manufacturer" Type="nvarchar" Mode="In" />
+          <Parameter Name="Purchased_From" Type="nvarchar" Mode="In" />
+          <Parameter Name="Purchase_Date" Type="date" Mode="In" />
+          <Parameter Name="Purchase_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Model" Type="nvarchar" Mode="In" />
+          <Parameter Name="Serial" Type="nvarchar" Mode="In" />
+          <Parameter Name="Cost" Type="money" Mode="In" />
+          <Parameter Name="Shipping_Costs" Type="money" Mode="In" />
+          <Parameter Name="Additional_Cost" Type="money" Mode="In" />
+          <Parameter Name="Additional_Costs_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Warranty_Details" Type="nvarchar" Mode="In" />
+          <Parameter Name="Warranty_Expiration_Date" Type="date" Mode="In" />
+          <Parameter Name="Keys_1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Keys_2" Type="nvarchar" Mode="In" />
+          <Parameter Name="Keys_3" Type="nvarchar" Mode="In" />
+          <Parameter Name="Keys_4" Type="nvarchar" Mode="In" />
+          <Parameter Name="External_Key" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Count_Order" Type="int" Mode="In" />
+          <Parameter Name="Machine_Notes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Machine_Comments" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Record_Modify_Date" Type="datetime2" Mode="In" />
+          <Parameter Name="Modifiers_Login" Type="varchar" Mode="In" />
+          <Parameter Name="Data_Is_Dummy" Type="bit" Mode="In" />
+          <Parameter Name="Flagged_for_Deletion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_MeetDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Meet_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_MeetInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="Day" Type="nvarchar" Mode="In" />
+          <Parameter Name="Time" Type="nvarchar" Mode="In" />
+          <Parameter Name="Where_" Type="nvarchar" Mode="In" />
+          <Parameter Name="Approach" Type="nvarchar" Mode="In" />
+          <Parameter Name="Method" Type="nvarchar" Mode="In" />
+          <Parameter Name="SuccessRank" Type="nvarchar" Mode="In" />
+          <Parameter Name="Meet_Detials" Type="nvarchar" Mode="In" />
+          <Parameter Name="Drinking" Type="bit" Mode="In" />
+          <Parameter Name="Smoking" Type="bit" Mode="In" />
+          <Parameter Name="Give_Card" Type="bit" Mode="In" />
+          <Parameter Name="Get_Number" Type="bit" Mode="In" />
+          <Parameter Name="What_base" Type="nvarchar" Mode="In" />
+          <Parameter Name="Improvements" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comments" Type="nvarchar" Mode="In" />
+          <Parameter Name="FName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LName" Type="nvarchar" Mode="In" />
+          <Parameter Name="NickName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Availability" Type="nvarchar" Mode="In" />
+          <Parameter Name="Avail_Duration" Type="nvarchar" Mode="In" />
+          <Parameter Name="Home_Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Work_Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Non_Vacation_Add" Type="nvarchar" Mode="In" />
+          <Parameter Name="Where_From" Type="nvarchar" Mode="In" />
+          <Parameter Name="Age" Type="int" Mode="In" />
+          <Parameter Name="Eyes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other" Type="nvarchar" Mode="In" />
+          <Parameter Name="Smoker" Type="bit" Mode="In" />
+          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="More_Comments" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_MeetSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Meet_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_MeetUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Meet_ID" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="Day" Type="nvarchar" Mode="In" />
+          <Parameter Name="Time" Type="nvarchar" Mode="In" />
+          <Parameter Name="Where_" Type="nvarchar" Mode="In" />
+          <Parameter Name="Approach" Type="nvarchar" Mode="In" />
+          <Parameter Name="Method" Type="nvarchar" Mode="In" />
+          <Parameter Name="SuccessRank" Type="nvarchar" Mode="In" />
+          <Parameter Name="Meet_Detials" Type="nvarchar" Mode="In" />
+          <Parameter Name="Drinking" Type="bit" Mode="In" />
+          <Parameter Name="Smoking" Type="bit" Mode="In" />
+          <Parameter Name="Give_Card" Type="bit" Mode="In" />
+          <Parameter Name="Get_Number" Type="bit" Mode="In" />
+          <Parameter Name="What_base" Type="nvarchar" Mode="In" />
+          <Parameter Name="Improvements" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comments" Type="nvarchar" Mode="In" />
+          <Parameter Name="FName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LName" Type="nvarchar" Mode="In" />
+          <Parameter Name="NickName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Availability" Type="nvarchar" Mode="In" />
+          <Parameter Name="Avail_Duration" Type="nvarchar" Mode="In" />
+          <Parameter Name="Home_Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Work_Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Non_Vacation_Add" Type="nvarchar" Mode="In" />
+          <Parameter Name="Where_From" Type="nvarchar" Mode="In" />
+          <Parameter Name="Age" Type="int" Mode="In" />
+          <Parameter Name="Eyes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other" Type="nvarchar" Mode="In" />
+          <Parameter Name="Smoker" Type="bit" Mode="In" />
+          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other_Phone" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="More_Comments" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_Date_TypesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_Date_TypesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="comments" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="dt_time" Type="time" Mode="In" />
+          <Parameter Name="dt_date" Type="date" Mode="In" />
+          <Parameter Name="dt_datetime" Type="datetime" Mode="In" />
+          <Parameter Name="dt_datetime2" Type="datetime2" Mode="In" />
+          <Parameter Name="Mod_Time_datetime" Type="datetime" Mode="In" />
+          <Parameter Name="Mod_Time_datetime2" Type="datetime2" Mode="In" />
+          <Parameter Name="Modifiers_Login" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_Date_TypesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_Date_TypesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="comments" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="dt_time" Type="time" Mode="In" />
+          <Parameter Name="dt_date" Type="date" Mode="In" />
+          <Parameter Name="dt_datetime" Type="datetime" Mode="In" />
+          <Parameter Name="dt_datetime2" Type="datetime2" Mode="In" />
+          <Parameter Name="Mod_Time_datetime" Type="datetime" Mode="In" />
+          <Parameter Name="Mod_Time_datetime2" Type="datetime2" Mode="In" />
+          <Parameter Name="Modifiers_Login" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_DateTime2_GetDateDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_PK_not_seed_nullable" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_DateTime2_GetDateInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_PK_not_seed_nullable" Type="int" Mode="In" />
+          <Parameter Name="dt_datetime2_GetDate_nullable" Type="datetime2" Mode="In" />
+          <Parameter Name="comments_nulable" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_DateTime2_GetDateSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_PK_not_seed_nullable" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_DateTime2_GetDateUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_PK_not_seed_nullable" Type="int" Mode="In" />
+          <Parameter Name="dt_datetime2_GetDate_nullable" Type="datetime2" Mode="In" />
+          <Parameter Name="comments_nulable" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_SQL_DataTypesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_SQL_DataTypesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="dt_Time" Type="time" Mode="In" />
+          <Parameter Name="dt_datetime" Type="date" Mode="In" />
+          <Parameter Name="dt_Varchar" Type="varchar" Mode="In" />
+          <Parameter Name="dt_Nvarchar" Type="nvarchar" Mode="In" />
+          <Parameter Name="dt_char_4" Type="char" Mode="In" />
+          <Parameter Name="dt_Nvarchar_MAX_COMMENTS" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="dt_Bit" Type="bit" Mode="In" />
+          <Parameter Name="dt_Decimal_10_4" Type="decimal" Mode="In" />
+          <Parameter Name="dt_Money" Type="money" Mode="In" />
+          <Parameter Name="dt_Image" Type="image" Mode="In" />
+          <Parameter Name="dt_Numeric_10_3" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_SQL_DataTypesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_Test_SQL_DataTypesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="dt_Time" Type="time" Mode="In" />
+          <Parameter Name="dt_datetime" Type="date" Mode="In" />
+          <Parameter Name="dt_Varchar" Type="varchar" Mode="In" />
+          <Parameter Name="dt_Nvarchar" Type="nvarchar" Mode="In" />
+          <Parameter Name="dt_char_4" Type="char" Mode="In" />
+          <Parameter Name="dt_Nvarchar_MAX_COMMENTS" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="dt_Bit" Type="bit" Mode="In" />
+          <Parameter Name="dt_Decimal_10_4" Type="decimal" Mode="In" />
+          <Parameter Name="dt_Money" Type="money" Mode="In" />
+          <Parameter Name="dt_Image" Type="image" Mode="In" />
+          <Parameter Name="dt_Numeric_10_3" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="usp_UPDATE_Interviews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="Interview_Number" Type="int" Mode="In" />
+          <Parameter Name="Day" Type="varchar" Mode="In" />
+          <Parameter Name="Time" Type="varchar" Mode="In" />
+          <Parameter Name="Place" Type="varchar" Mode="In" />
+          <Parameter Name="Lead_Source" Type="varchar" Mode="In" />
+          <Parameter Name="Staffing" Type="bit" Mode="In" />
+          <Parameter Name="Interviewer1_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer1_Role" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer2_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer2_Role" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer3_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer3_Role" Type="varchar" Mode="In" />
+          <Parameter Name="Interviewer_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Interview_email" Type="varchar" Mode="In" />
+          <Parameter Name="HR_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="HR_email" Type="varchar" Mode="In" />
+          <Parameter Name="Recuiter_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Recuiter_email" Type="varchar" Mode="In" />
+          <Parameter Name="Other_Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Other_email" Type="varchar" Mode="In" />
+          <Parameter Name="Interview_Type" Type="varchar" Mode="In" />
+          <Parameter Name="Test_Details" Type="varchar" Mode="In" />
+          <Parameter Name="Tech_Q_A" Type="varchar" Mode="In" />
+          <Parameter Name="Negotiation_Details" Type="varchar" Mode="In" />
+          <Parameter Name="Details" Type="varchar" Mode="In" />
+          <Parameter Name="Comments" Type="varchar" Mode="In" />
+          <Parameter Name="Improvements" Type="varchar" Mode="In" />
+          <Parameter Name="Notes" Type="varchar" Mode="In" />
+          <Parameter Name="Got_Job" Type="bit" Mode="In" />
+          <Parameter Name="Position" Type="varchar" Mode="In" />
+          <Parameter Name="Pay" Type="varchar" Mode="In" />
+          <Parameter Name="Comp_Name" Type="varchar" Mode="In" />
+          <Parameter Name="Comp_Number" Type="varchar" Mode="In" />
+          <Parameter Name="Comp_URL" Type="varchar" Mode="In" />
+          <Parameter Name="Duration" Type="varchar" Mode="In" />
+          <Parameter Name="How_Ended" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_UPDATE_Workout" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="workout_ID" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="datetime" Mode="In" />
+          <Parameter Name="DeadLift_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Deadlift_Max_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_total_reps" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_total_reps_wieght" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_2Min" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_max" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_Max_wieght" Type="smallint" Mode="In" />
+          <Parameter Name="PushUp_final_Set_max" Type="smallint" Mode="In" />
+          <Parameter Name="Push_ups_Max_2min" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_curls_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_curls_Wieght" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_Plate_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_plate_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="TBack_final_set_max" Type="smallint" Mode="In" />
+          <Parameter Name="TBack_Max_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="Delt_Mil_press_final_Set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Delt_Mil_Press_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="Deltiod_2Min" Type="bit" Mode="In" />
+          <Parameter Name="Obliques_final_rep_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Obligues_Wieght" Type="smallint" Mode="In" />
+          <Parameter Name="Run_3_sprint" Type="bit" Mode="In" />
+          <Parameter Name="Run_2mile_timed" Type="time" Mode="In" />
+          <Parameter Name="DataISDumy" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_UPDATE_Workout_Got_Number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="Day" Type="nvarchar" Mode="In" />
+          <Parameter Name="Time" Type="nvarchar" Mode="In" />
+          <Parameter Name="Place" Type="nvarchar" Mode="In" />
+          <Parameter Name="Approach" Type="nvarchar" Mode="In" />
+          <Parameter Name="Method" Type="nvarchar" Mode="In" />
+          <Parameter Name="Rank" Type="nvarchar" Mode="In" />
+          <Parameter Name="M_Detials" Type="nvarchar" Mode="In" />
+          <Parameter Name="Drink" Type="bit" Mode="In" />
+          <Parameter Name="Smoke" Type="bit" Mode="In" />
+          <Parameter Name="Card" Type="bit" Mode="In" />
+          <Parameter Name="Get_No" Type="bit" Mode="In" />
+          <Parameter Name="Touch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Improve" Type="nvarchar" Mode="In" />
+          <Parameter Name="Com" Type="nvarchar" Mode="In" />
+          <Parameter Name="FName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nick" Type="nvarchar" Mode="In" />
+          <Parameter Name="Avail" Type="nvarchar" Mode="In" />
+          <Parameter Name="Duration" Type="nvarchar" Mode="In" />
+          <Parameter Name="HomeAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="WorkAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="NonVacAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="BornIn" Type="nvarchar" Mode="In" />
+          <Parameter Name="Money" Type="nvarchar" Mode="In" />
+          <Parameter Name="Age" Type="nvarchar" Mode="In" />
+          <Parameter Name="Eyes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other" Type="nvarchar" Mode="In" />
+          <Parameter Name="Smoker" Type="bit" Mode="In" />
+          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="OtherNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_Workout_Got_NumberDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_Workout_Got_NumberInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="Day" Type="nvarchar" Mode="In" />
+          <Parameter Name="Time" Type="nvarchar" Mode="In" />
+          <Parameter Name="Place" Type="nvarchar" Mode="In" />
+          <Parameter Name="Approach" Type="nvarchar" Mode="In" />
+          <Parameter Name="Method" Type="nvarchar" Mode="In" />
+          <Parameter Name="Rank" Type="nvarchar" Mode="In" />
+          <Parameter Name="M_Detials" Type="nvarchar" Mode="In" />
+          <Parameter Name="Drink" Type="bit" Mode="In" />
+          <Parameter Name="Smoke" Type="bit" Mode="In" />
+          <Parameter Name="Card" Type="bit" Mode="In" />
+          <Parameter Name="Get_No" Type="bit" Mode="In" />
+          <Parameter Name="Touch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Improve" Type="nvarchar" Mode="In" />
+          <Parameter Name="Com" Type="nvarchar" Mode="In" />
+          <Parameter Name="FName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nick" Type="nvarchar" Mode="In" />
+          <Parameter Name="Avail" Type="nvarchar" Mode="In" />
+          <Parameter Name="Duration" Type="nvarchar" Mode="In" />
+          <Parameter Name="HomeAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="WorkAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="NonVacAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="BornIn" Type="nvarchar" Mode="In" />
+          <Parameter Name="Money" Type="nvarchar" Mode="In" />
+          <Parameter Name="Age" Type="nvarchar" Mode="In" />
+          <Parameter Name="Eyes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other" Type="nvarchar" Mode="In" />
+          <Parameter Name="Smoker" Type="bit" Mode="In" />
+          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="OtherNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_Workout_Got_NumberSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_Workout_Got_NumberUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="Day" Type="nvarchar" Mode="In" />
+          <Parameter Name="Time" Type="nvarchar" Mode="In" />
+          <Parameter Name="Place" Type="nvarchar" Mode="In" />
+          <Parameter Name="Approach" Type="nvarchar" Mode="In" />
+          <Parameter Name="Method" Type="nvarchar" Mode="In" />
+          <Parameter Name="Rank" Type="nvarchar" Mode="In" />
+          <Parameter Name="M_Detials" Type="nvarchar" Mode="In" />
+          <Parameter Name="Drink" Type="bit" Mode="In" />
+          <Parameter Name="Smoke" Type="bit" Mode="In" />
+          <Parameter Name="Card" Type="bit" Mode="In" />
+          <Parameter Name="Get_No" Type="bit" Mode="In" />
+          <Parameter Name="Touch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Improve" Type="nvarchar" Mode="In" />
+          <Parameter Name="Com" Type="nvarchar" Mode="In" />
+          <Parameter Name="FName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nick" Type="nvarchar" Mode="In" />
+          <Parameter Name="Avail" Type="nvarchar" Mode="In" />
+          <Parameter Name="Duration" Type="nvarchar" Mode="In" />
+          <Parameter Name="HomeAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="WorkAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="NonVacAdd" Type="nvarchar" Mode="In" />
+          <Parameter Name="BornIn" Type="nvarchar" Mode="In" />
+          <Parameter Name="Money" Type="nvarchar" Mode="In" />
+          <Parameter Name="Age" Type="nvarchar" Mode="In" />
+          <Parameter Name="Eyes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Other" Type="nvarchar" Mode="In" />
+          <Parameter Name="Smoker" Type="bit" Mode="In" />
+          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="OtherNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_WorkOutDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="workout_ID" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="usp_WorkOutInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="datetime" Mode="In" />
+          <Parameter Name="DeadLift_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Deadlift_Max_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_total_reps" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_total_reps_wieght" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_2Min" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_max" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_Max_wieght" Type="smallint" Mode="In" />
+          <Parameter Name="PushUp_final_Set_max" Type="smallint" Mode="In" />
+          <Parameter Name="Push_ups_Max_2min" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_curls_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_curls_Wieght" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_Plate_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_plate_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="TBack_final_set_max" Type="smallint" Mode="In" />
+          <Parameter Name="TBack_Max_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="Delt_Mil_press_final_Set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Delt_Mil_Press_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="Deltiod_2Min" Type="bit" Mode="In" />
+          <Parameter Name="Obliques_final_rep_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Obligues_Wieght" Type="smallint" Mode="In" />
+          <Parameter Name="Run_3_sprint" Type="bit" Mode="In" />
+          <Parameter Name="Run_2mile_timed" Type="time" Mode="In" />
+          <Parameter Name="DataISDumy" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_WorkOutSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="workout_ID" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="usp_WorkOutUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="workout_ID" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="datetime" Mode="In" />
+          <Parameter Name="DeadLift_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Deadlift_Max_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_total_reps" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_total_reps_wieght" Type="smallint" Mode="In" />
+          <Parameter Name="ABS_Max_2Min" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_max" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Bench_Max_wieght" Type="smallint" Mode="In" />
+          <Parameter Name="PushUp_final_Set_max" Type="smallint" Mode="In" />
+          <Parameter Name="Push_ups_Max_2min" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_curls_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_curls_Wieght" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_Plate_final_set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Biceps_plate_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="TBack_final_set_max" Type="smallint" Mode="In" />
+          <Parameter Name="TBack_Max_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="Delt_Mil_press_final_Set_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Delt_Mil_Press_Weight" Type="smallint" Mode="In" />
+          <Parameter Name="Deltiod_2Min" Type="bit" Mode="In" />
+          <Parameter Name="Obliques_final_rep_Max" Type="smallint" Mode="In" />
+          <Parameter Name="Obligues_Wieght" Type="smallint" Mode="In" />
+          <Parameter Name="Run_3_sprint" Type="bit" Mode="In" />
+          <Parameter Name="Run_2mile_timed" Type="time" Mode="In" />
+          <Parameter Name="DataISDumy" Type="bit" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Action_Amusements_WinhostModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Action_Amusements_WinhostEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="WorkOuts" EntityType="Action_Amusements_WinhostModel.WorkOut" />
+          <EntitySet Name="Workout_Got_Number" EntityType="Action_Amusements_WinhostModel.Workout_Got_Number" />
+          <EntitySet Name="Interviews" EntityType="Action_Amusements_WinhostModel.Interview" />
+          <EntitySet Name="Test_Date_Types" EntityType="Action_Amusements_WinhostModel.Test_Date_Types" />
+          <EntitySet Name="Test_SQL_DataTypes" EntityType="Action_Amusements_WinhostModel.Test_SQL_DataTypes" />
+          <EntitySet Name="Test_DateTime2_GetDate" EntityType="Action_Amusements_WinhostModel.Test_DateTime2_GetDate" />
+          <EntitySet Name="LU_MachineClass" EntityType="Action_Amusements_WinhostModel.LU_MachineClass" />
+          <EntitySet Name="Locations" EntityType="Action_Amusements_WinhostModel.Location" />
+          <EntitySet Name="Accs" EntityType="Action_Amusements_WinhostModel.Acc" />
+          <EntitySet Name="Machines" EntityType="Action_Amusements_WinhostModel.Machine" />
+          <AssociationSet Name="FK_Location_Acc" Association="Action_Amusements_WinhostModel.FK_Location_Acc">
+            <End Role="Acc" EntitySet="Accs" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Machine_Location" Association="Action_Amusements_WinhostModel.FK_Machine_Location">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Machine" EntitySet="Machines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Machine_LU_MachineClass" Association="Action_Amusements_WinhostModel.FK_Machine_LU_MachineClass">
+            <End Role="LU_MachineClass" EntitySet="LU_MachineClass" />
+            <End Role="Machine" EntitySet="Machines" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="WorkOut">
+          <Key>
+            <PropertyRef Name="workout_ID" />
+            <PropertyRef Name="Date" />
+          </Key>
+          <Property Name="workout_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="DeadLift_final_set_Max" Type="Int16" />
+          <Property Name="Deadlift_Max_Weight" Type="Int16" />
+          <Property Name="ABS_Max_total_reps" Type="Int16" />
+          <Property Name="ABS_Max_total_reps_wieght" Type="Int16" />
+          <Property Name="ABS_Max_2Min" Type="Int16" />
+          <Property Name="Bench_max" Type="Int16" />
+          <Property Name="Bench_final_set_Max" Type="Int16" />
+          <Property Name="Bench_Max_wieght" Type="Int16" />
+          <Property Name="PushUp_final_Set_max" Type="Int16" />
+          <Property Name="Push_ups_Max_2min" Type="Int16" />
+          <Property Name="Biceps_curls_final_set_Max" Type="Int16" />
+          <Property Name="Biceps_curls_Wieght" Type="Int16" />
+          <Property Name="Biceps_Plate_final_set_Max" Type="Int16" />
+          <Property Name="Biceps_plate_Weight" Type="Int16" />
+          <Property Name="TBack_final_set_max" Type="Int16" />
+          <Property Name="TBack_Max_Weight" Type="Int16" />
+          <Property Name="Delt_Mil_press_final_Set_Max" Type="Int16" />
+          <Property Name="Delt_Mil_Press_Weight" Type="Int16" />
+          <Property Name="Deltiod_2Min" Type="Boolean" />
+          <Property Name="Obliques_final_rep_Max" Type="Int16" />
+          <Property Name="Obligues_Wieght" Type="Int16" />
+          <Property Name="Run_3_sprint" Type="Boolean" />
+          <Property Name="Run_2mile_timed" Type="Time" />
+          <Property Name="DataISDumy" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Workout_Got_Number">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="Day" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Time" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Place" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Approach" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Method" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Rank" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="M_Detials" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Drink" />
+          <Property Type="Boolean" Name="Smoke" />
+          <Property Type="Boolean" Name="Card" />
+          <Property Type="Boolean" Name="Get_No" />
+          <Property Type="String" Name="Touch" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Improve" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Com" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Nick" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Avail" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Duration" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HomeAdd" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WorkAdd" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NonVacAdd" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BornIn" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Money" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Age" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Eyes" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Other" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Smoker" />
+          <Property Type="String" Name="Mobile" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OtherNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Interview">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="Int32" Name="Interview_Number" />
+          <Property Type="String" Name="Day" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Time" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Place" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Lead_Source" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Staffing" />
+          <Property Type="String" Name="Interviewer1_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Interviewer1_Role" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Interviewer2_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Interviewer2_Role" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Interviewer3_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Interviewer3_Role" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Interviewer_Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Interview_email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HR_Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HR_email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Recuiter_Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Recuiter_email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Other_Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Other_email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Interview_Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Test_Details" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tech_Q_A" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Negotiation_Details" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Details" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Comments" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Improvements" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notes" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Got_Job" />
+          <Property Type="String" Name="Position" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pay" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Comp_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Comp_Number" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Comp_URL" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Duration" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="How_Ended" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Test_Date_Types">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="comments" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Time" Name="dt_time" />
+          <Property Type="DateTime" Name="dt_date" />
+          <Property Type="DateTime" Name="dt_datetime" />
+          <Property Type="DateTime" Name="dt_datetime2" />
+          <Property Type="Binary" Name="dt_timestamp" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Type="DateTime" Name="Mod_Time_datetime" Nullable="false" />
+          <Property Type="DateTime" Name="Mod_Time_datetime2" Nullable="false" />
+          <Property Type="String" Name="Modifiers_Login" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Test_SQL_DataTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Time" Name="dt_Time" />
+          <Property Type="DateTime" Name="dt_datetime" />
+          <Property Type="String" Name="dt_Varchar" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="dt_Nvarchar" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="dt_char_4" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="dt_Nvarchar_MAX_COMMENTS" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="dt_Bit" />
+          <Property Type="Decimal" Name="dt_Decimal_10_4" Precision="10" Scale="4" />
+          <Property Type="Decimal" Name="dt_Money" Precision="19" Scale="4" />
+          <Property Type="Binary" Name="dt_Image" MaxLength="Max" FixedLength="false" />
+          <Property Type="Decimal" Name="dt_Numeric_10_3" Precision="10" Scale="4" />
+        </EntityType>
+        <EntityType Name="Test_DateTime2_GetDate">
+          <Key>
+            <PropertyRef Name="Id_PK_not_seed_nullable" />
+          </Key>
+          <Property Type="Int32" Name="Id_PK_not_seed_nullable" Nullable="false" />
+          <Property Type="DateTime" Name="dt_datetime2_GetDate_nullable" />
+          <Property Type="String" Name="comments_nulable" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LU_MachineClass">
+          <Key>
+            <PropertyRef Name="ClassCode" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ClassCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="RowVersion" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Machines" Relationship="Action_Amusements_WinhostModel.FK_Machine_LU_MachineClass" FromRole="LU_MachineClass" ToRole="Machine" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Location_Code" />
+          </Key>
+          <Property Type="Int32" Name="Location_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Location_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Location_Code" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Acc_Code" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Loc_Begin_Date" Nullable="false" />
+          <Property Type="DateTime" Name="Loc_End_Date" />
+          <Property Type="Boolean" Name="Is_Active" />
+          <Property Type="String" Name="Address1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State_Province_Territory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Postal_Code" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact1_FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact1_LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact1_Role" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact1_Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact1_Cell" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact2_FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact2_LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact2_Role" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact2_Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact2_Cell" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Owner_FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Owner_LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Owner_Cell" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Owner_Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Location_Office_Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Location_Bar_Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email_for_Sales_Report" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notes1" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notes2" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Comments" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tax_Percente_State" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tax_Percente_County" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tax_Percente_Other" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Split_Percent" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Record_Modify_Date" />
+          <Property Type="String" Name="Modifiers_Login" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Data_Is_Dummy" />
+          <Property Type="Boolean" Name="Flagged_for_Deletion" />
+          <Property Type="Binary" Name="RowVersion" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Acc" Relationship="Action_Amusements_WinhostModel.FK_Location_Acc" FromRole="Location" ToRole="Acc" />
+          <NavigationProperty Name="Machines" Relationship="Action_Amusements_WinhostModel.FK_Machine_Location" FromRole="Location" ToRole="Machine" />
+        </EntityType>
+        <EntityType Name="Acc">
+          <Key>
+            <PropertyRef Name="Acc_Code" />
+          </Key>
+          <Property Type="Int32" Name="Acc_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Acc_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Acc_Code" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Begin_Date" Nullable="false" />
+          <Property Type="DateTime" Name="End_Date" />
+          <Property Type="Boolean" Name="Is_Active" />
+          <Property Type="String" Name="Acc_Details" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State_Province_Territory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Postal_Code" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Owner_FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Owner_LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Owner_Cell" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Owner_Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Acc_Office_Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Acc_Office_Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Other_Office_Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Other_Office_Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="POC_FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="POC_LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="POC_Role" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="POC_Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="POC_Cell" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notes" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Comments" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Record_Modify_Date" />
+          <Property Type="String" Name="Modifiers_Login" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Data_Is_Dummy" />
+          <Property Type="Boolean" Name="Flagged_for_Deletion" />
+          <Property Type="Binary" Name="RowVersion" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Locations" Relationship="Action_Amusements_WinhostModel.FK_Location_Acc" FromRole="Acc" ToRole="Location" />
+        </EntityType>
+        <EntityType Name="Machine">
+          <Key>
+            <PropertyRef Name="Alias" />
+          </Key>
+          <Property Type="Int32" Name="Machine_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Alias" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Machine_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Machine_Class" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Machine_Owner_FirstName" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Machine_Owner_LastName" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Manufacturer" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Purchased_From" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Purchase_Date" />
+          <Property Type="String" Name="Purchase_Details" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Model" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Serial" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Cost" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Shipping_Costs" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Additional_Cost" Precision="19" Scale="4" />
+          <Property Type="String" Name="Additional_Costs_Details" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Warranty_Details" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Warranty_Expiration_Date" />
+          <Property Type="String" Name="Keys_1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Keys_2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Keys_3" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Keys_4" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="External_Key" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Machine_Count_Order" />
+          <Property Type="String" Name="Machine_Notes" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Machine_Comments" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Location_Code" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Record_Modify_Date" />
+          <Property Type="String" Name="Modifiers_Login" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Data_Is_Dummy" />
+          <Property Type="Boolean" Name="Flagged_for_Deletion" />
+          <Property Type="Binary" Name="RowVersion" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Location" Relationship="Action_Amusements_WinhostModel.FK_Machine_Location" FromRole="Machine" ToRole="Location" />
+          <NavigationProperty Name="LU_MachineClass" Relationship="Action_Amusements_WinhostModel.FK_Machine_LU_MachineClass" FromRole="Machine" ToRole="LU_MachineClass" />
+        </EntityType>
+        <Association Name="FK_Location_Acc">
+          <End Type="Action_Amusements_WinhostModel.Acc" Role="Acc" Multiplicity="0..1" />
+          <End Type="Action_Amusements_WinhostModel.Location" Role="Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Acc">
+              <PropertyRef Name="Acc_Code" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="Acc_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Machine_Location">
+          <End Type="Action_Amusements_WinhostModel.Location" Role="Location" Multiplicity="1" />
+          <End Type="Action_Amusements_WinhostModel.Machine" Role="Machine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Location_Code" />
+            </Principal>
+            <Dependent Role="Machine">
+              <PropertyRef Name="Location_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Machine_LU_MachineClass">
+          <End Type="Action_Amusements_WinhostModel.LU_MachineClass" Role="LU_MachineClass" Multiplicity="1" />
+          <End Type="Action_Amusements_WinhostModel.Machine" Role="Machine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_MachineClass">
+              <PropertyRef Name="ClassCode" />
+            </Principal>
+            <Dependent Role="Machine">
+              <PropertyRef Name="Machine_Class" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Action_Amusements_WinhostModelStoreContainer" CdmEntityContainer="Action_Amusements_WinhostEntities">
+          <EntitySetMapping Name="WorkOuts"><EntityTypeMapping TypeName="Action_Amusements_WinhostModel.WorkOut"><MappingFragment StoreEntitySet="WorkOut">
+            <ScalarProperty Name="workout_ID" ColumnName="workout_ID" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="DeadLift_final_set_Max" ColumnName="DeadLift_final_set_Max" />
+            <ScalarProperty Name="Deadlift_Max_Weight" ColumnName="Deadlift_Max_Weight" />
+            <ScalarProperty Name="ABS_Max_total_reps" ColumnName="ABS_Max_total_reps" />
+            <ScalarProperty Name="ABS_Max_total_reps_wieght" ColumnName="ABS_Max_total_reps_wieght" />
+            <ScalarProperty Name="ABS_Max_2Min" ColumnName="ABS_Max_2Min" />
+            <ScalarProperty Name="Bench_max" ColumnName="Bench_max" />
+            <ScalarProperty Name="Bench_final_set_Max" ColumnName="Bench_final_set_Max" />
+            <ScalarProperty Name="Bench_Max_wieght" ColumnName="Bench_Max_wieght" />
+            <ScalarProperty Name="PushUp_final_Set_max" ColumnName="PushUp_final_Set_max" />
+            <ScalarProperty Name="Push_ups_Max_2min" ColumnName="Push_ups_Max_2min" />
+            <ScalarProperty Name="Biceps_curls_final_set_Max" ColumnName="Biceps_curls_final_set_Max" />
+            <ScalarProperty Name="Biceps_curls_Wieght" ColumnName="Biceps_curls_Wieght" />
+            <ScalarProperty Name="Biceps_Plate_final_set_Max" ColumnName="Biceps_Plate_final_set_Max" />
+            <ScalarProperty Name="Biceps_plate_Weight" ColumnName="Biceps_plate_Weight" />
+            <ScalarProperty Name="TBack_final_set_max" ColumnName="TBack_final_set_max" />
+            <ScalarProperty Name="TBack_Max_Weight" ColumnName="TBack_Max_Weight" />
+            <ScalarProperty Name="Delt_Mil_press_final_Set_Max" ColumnName="Delt_Mil_press_final_Set_Max" />
+            <ScalarProperty Name="Delt_Mil_Press_Weight" ColumnName="Delt_Mil_Press_Weight" />
+            <ScalarProperty Name="Deltiod_2Min" ColumnName="Deltiod_2Min" />
+            <ScalarProperty Name="Obliques_final_rep_Max" ColumnName="Obliques_final_rep_Max" />
+            <ScalarProperty Name="Obligues_Wieght" ColumnName="Obligues_Wieght" />
+            <ScalarProperty Name="Run_3_sprint" ColumnName="Run_3_sprint" />
+            <ScalarProperty Name="Run_2mile_timed" ColumnName="Run_2mile_timed" />
+            <ScalarProperty Name="DataISDumy" ColumnName="DataISDumy" />
+          </MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.WorkOut">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_INSERT_Workout">
+                  <ScalarProperty Name="DataISDumy" ParameterName="DataISDumy" />
+                  <ScalarProperty Name="Run_2mile_timed" ParameterName="Run_2mile_timed" />
+                  <ScalarProperty Name="Run_3_sprint" ParameterName="Run_3_sprint" />
+                  <ScalarProperty Name="Obligues_Wieght" ParameterName="Obligues_Wieght" />
+                  <ScalarProperty Name="Obliques_final_rep_Max" ParameterName="Obliques_final_rep_Max" />
+                  <ScalarProperty Name="Deltiod_2Min" ParameterName="Deltiod_2Min" />
+                  <ScalarProperty Name="Delt_Mil_Press_Weight" ParameterName="Delt_Mil_Press_Weight" />
+                  <ScalarProperty Name="Delt_Mil_press_final_Set_Max" ParameterName="Delt_Mil_press_final_Set_Max" />
+                  <ScalarProperty Name="TBack_Max_Weight" ParameterName="TBack_Max_Weight" />
+                  <ScalarProperty Name="TBack_final_set_max" ParameterName="TBack_final_set_max" />
+                  <ScalarProperty Name="Biceps_plate_Weight" ParameterName="Biceps_plate_Weight" />
+                  <ScalarProperty Name="Biceps_Plate_final_set_Max" ParameterName="Biceps_Plate_final_set_Max" />
+                  <ScalarProperty Name="Biceps_curls_Wieght" ParameterName="Biceps_curls_Wieght" />
+                  <ScalarProperty Name="Biceps_curls_final_set_Max" ParameterName="Biceps_curls_final_set_Max" />
+                  <ScalarProperty Name="Push_ups_Max_2min" ParameterName="Push_ups_Max_2min" />
+                  <ScalarProperty Name="PushUp_final_Set_max" ParameterName="PushUp_final_Set_max" />
+                  <ScalarProperty Name="Bench_Max_wieght" ParameterName="Bench_Max_wieght" />
+                  <ScalarProperty Name="Bench_final_set_Max" ParameterName="Bench_final_set_Max" />
+                  <ScalarProperty Name="Bench_max" ParameterName="Bench_max" />
+                  <ScalarProperty Name="ABS_Max_2Min" ParameterName="ABS_Max_2Min" />
+                  <ScalarProperty Name="ABS_Max_total_reps_wieght" ParameterName="ABS_Max_total_reps_wieght" />
+                  <ScalarProperty Name="ABS_Max_total_reps" ParameterName="ABS_Max_total_reps" />
+                  <ScalarProperty Name="Deadlift_Max_Weight" ParameterName="Deadlift_Max_Weight" />
+                  <ScalarProperty Name="DeadLift_final_set_Max" ParameterName="DeadLift_final_set_Max" />
+                  <ScalarProperty Name="Date" ParameterName="Date" />
+                  <ResultBinding Name="workout_ID" ColumnName="Workout_ID" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_UPDATE_Workout">
+                  <ScalarProperty Name="DataISDumy" ParameterName="DataISDumy" Version="Current" />
+                  <ScalarProperty Name="Run_2mile_timed" ParameterName="Run_2mile_timed" Version="Current" />
+                  <ScalarProperty Name="Run_3_sprint" ParameterName="Run_3_sprint" Version="Current" />
+                  <ScalarProperty Name="Obligues_Wieght" ParameterName="Obligues_Wieght" Version="Current" />
+                  <ScalarProperty Name="Obliques_final_rep_Max" ParameterName="Obliques_final_rep_Max" Version="Current" />
+                  <ScalarProperty Name="Deltiod_2Min" ParameterName="Deltiod_2Min" Version="Current" />
+                  <ScalarProperty Name="Delt_Mil_Press_Weight" ParameterName="Delt_Mil_Press_Weight" Version="Current" />
+                  <ScalarProperty Name="Delt_Mil_press_final_Set_Max" ParameterName="Delt_Mil_press_final_Set_Max" Version="Current" />
+                  <ScalarProperty Name="TBack_Max_Weight" ParameterName="TBack_Max_Weight" Version="Current" />
+                  <ScalarProperty Name="TBack_final_set_max" ParameterName="TBack_final_set_max" Version="Current" />
+                  <ScalarProperty Name="Biceps_plate_Weight" ParameterName="Biceps_plate_Weight" Version="Current" />
+                  <ScalarProperty Name="Biceps_Plate_final_set_Max" ParameterName="Biceps_Plate_final_set_Max" Version="Current" />
+                  <ScalarProperty Name="Biceps_curls_Wieght" ParameterName="Biceps_curls_Wieght" Version="Current" />
+                  <ScalarProperty Name="Biceps_curls_final_set_Max" ParameterName="Biceps_curls_final_set_Max" Version="Current" />
+                  <ScalarProperty Name="Push_ups_Max_2min" ParameterName="Push_ups_Max_2min" Version="Current" />
+                  <ScalarProperty Name="PushUp_final_Set_max" ParameterName="PushUp_final_Set_max" Version="Current" />
+                  <ScalarProperty Name="Bench_Max_wieght" ParameterName="Bench_Max_wieght" Version="Current" />
+                  <ScalarProperty Name="Bench_final_set_Max" ParameterName="Bench_final_set_Max" Version="Current" />
+                  <ScalarProperty Name="Bench_max" ParameterName="Bench_max" Version="Current" />
+                  <ScalarProperty Name="ABS_Max_2Min" ParameterName="ABS_Max_2Min" Version="Current" />
+                  <ScalarProperty Name="ABS_Max_total_reps_wieght" ParameterName="ABS_Max_total_reps_wieght" Version="Current" />
+                  <ScalarProperty Name="ABS_Max_total_reps" ParameterName="ABS_Max_total_reps" Version="Current" />
+                  <ScalarProperty Name="Deadlift_Max_Weight" ParameterName="Deadlift_Max_Weight" Version="Current" />
+                  <ScalarProperty Name="DeadLift_final_set_Max" ParameterName="DeadLift_final_set_Max" Version="Current" />
+                  <ScalarProperty Name="Date" ParameterName="Date" Version="Current" />
+                  <ScalarProperty Name="workout_ID" ParameterName="workout_ID" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_DELETE_Workout">
+                  <ScalarProperty Name="workout_ID" ParameterName="workout_ID" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Workout_Got_Number">
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Workout_Got_Number">
+              <MappingFragment StoreEntitySet="Workout_Got_Number">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="OtherNo" ColumnName="OtherNo" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Smoker" ColumnName="Smoker" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="Eyes" ColumnName="Eyes" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="BornIn" ColumnName="BornIn" />
+                <ScalarProperty Name="NonVacAdd" ColumnName="NonVacAdd" />
+                <ScalarProperty Name="WorkAdd" ColumnName="WorkAdd" />
+                <ScalarProperty Name="HomeAdd" ColumnName="HomeAdd" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Avail" ColumnName="Avail" />
+                <ScalarProperty Name="Nick" ColumnName="Nick" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="Com" ColumnName="Com" />
+                <ScalarProperty Name="Improve" ColumnName="Improve" />
+                <ScalarProperty Name="Touch" ColumnName="Touch" />
+                <ScalarProperty Name="Get_No" ColumnName="Get_No" />
+                <ScalarProperty Name="Card" ColumnName="Card" />
+                <ScalarProperty Name="Smoke" ColumnName="Smoke" />
+                <ScalarProperty Name="Drink" ColumnName="Drink" />
+                <ScalarProperty Name="M_Detials" ColumnName="M_Detials" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="Approach" ColumnName="Approach" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Workout_Got_Number">
+              <ModificationFunctionMapping>
+                <UpdateFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_Workout_Got_NumberUpdate">
+                  <ScalarProperty Name="Email" ParameterName="Email" Version="Current" />
+                  <ScalarProperty Name="OtherNo" ParameterName="OtherNo" Version="Current" />
+                  <ScalarProperty Name="Mobile" ParameterName="Mobile" Version="Current" />
+                  <ScalarProperty Name="Smoker" ParameterName="Smoker" Version="Current" />
+                  <ScalarProperty Name="Other" ParameterName="Other" Version="Current" />
+                  <ScalarProperty Name="Eyes" ParameterName="Eyes" Version="Current" />
+                  <ScalarProperty Name="Age" ParameterName="Age" Version="Current" />
+                  <ScalarProperty Name="Money" ParameterName="Money" Version="Current" />
+                  <ScalarProperty Name="BornIn" ParameterName="BornIn" Version="Current" />
+                  <ScalarProperty Name="NonVacAdd" ParameterName="NonVacAdd" Version="Current" />
+                  <ScalarProperty Name="WorkAdd" ParameterName="WorkAdd" Version="Current" />
+                  <ScalarProperty Name="HomeAdd" ParameterName="HomeAdd" Version="Current" />
+                  <ScalarProperty Name="Duration" ParameterName="Duration" Version="Current" />
+                  <ScalarProperty Name="Avail" ParameterName="Avail" Version="Current" />
+                  <ScalarProperty Name="Nick" ParameterName="Nick" Version="Current" />
+                  <ScalarProperty Name="LName" ParameterName="LName" Version="Current" />
+                  <ScalarProperty Name="FName" ParameterName="FName" Version="Current" />
+                  <ScalarProperty Name="Com" ParameterName="Com" Version="Current" />
+                  <ScalarProperty Name="Improve" ParameterName="Improve" Version="Current" />
+                  <ScalarProperty Name="Touch" ParameterName="Touch" Version="Current" />
+                  <ScalarProperty Name="Get_No" ParameterName="Get_No" Version="Current" />
+                  <ScalarProperty Name="Card" ParameterName="Card" Version="Current" />
+                  <ScalarProperty Name="Smoke" ParameterName="Smoke" Version="Current" />
+                  <ScalarProperty Name="Drink" ParameterName="Drink" Version="Current" />
+                  <ScalarProperty Name="M_Detials" ParameterName="M_Detials" Version="Current" />
+                  <ScalarProperty Name="Rank" ParameterName="Rank" Version="Current" />
+                  <ScalarProperty Name="Method" ParameterName="Method" Version="Current" />
+                  <ScalarProperty Name="Approach" ParameterName="Approach" Version="Current" />
+                  <ScalarProperty Name="Place" ParameterName="Place" Version="Current" />
+                  <ScalarProperty Name="Time" ParameterName="Time" Version="Current" />
+                  <ScalarProperty Name="Day" ParameterName="Day" Version="Current" />
+                  <ScalarProperty Name="Date" ParameterName="Date" Version="Current" />
+                  <ScalarProperty Name="ID" ParameterName="ID" Version="Current" />
+                </UpdateFunction>
+                <InsertFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_Workout_Got_NumberInsert">
+                  <ScalarProperty Name="Email" ParameterName="Email" />
+                  <ScalarProperty Name="OtherNo" ParameterName="OtherNo" />
+                  <ScalarProperty Name="Mobile" ParameterName="Mobile" />
+                  <ScalarProperty Name="Smoker" ParameterName="Smoker" />
+                  <ScalarProperty Name="Other" ParameterName="Other" />
+                  <ScalarProperty Name="Eyes" ParameterName="Eyes" />
+                  <ScalarProperty Name="Age" ParameterName="Age" />
+                  <ScalarProperty Name="Money" ParameterName="Money" />
+                  <ScalarProperty Name="BornIn" ParameterName="BornIn" />
+                  <ScalarProperty Name="NonVacAdd" ParameterName="NonVacAdd" />
+                  <ScalarProperty Name="WorkAdd" ParameterName="WorkAdd" />
+                  <ScalarProperty Name="HomeAdd" ParameterName="HomeAdd" />
+                  <ScalarProperty Name="Duration" ParameterName="Duration" />
+                  <ScalarProperty Name="Avail" ParameterName="Avail" />
+                  <ScalarProperty Name="Nick" ParameterName="Nick" />
+                  <ScalarProperty Name="LName" ParameterName="LName" />
+                  <ScalarProperty Name="FName" ParameterName="FName" />
+                  <ScalarProperty Name="Com" ParameterName="Com" />
+                  <ScalarProperty Name="Improve" ParameterName="Improve" />
+                  <ScalarProperty Name="Touch" ParameterName="Touch" />
+                  <ScalarProperty Name="Get_No" ParameterName="Get_No" />
+                  <ScalarProperty Name="Card" ParameterName="Card" />
+                  <ScalarProperty Name="Smoke" ParameterName="Smoke" />
+                  <ScalarProperty Name="Drink" ParameterName="Drink" />
+                  <ScalarProperty Name="M_Detials" ParameterName="M_Detials" />
+                  <ScalarProperty Name="Rank" ParameterName="Rank" />
+                  <ScalarProperty Name="Method" ParameterName="Method" />
+                  <ScalarProperty Name="Approach" ParameterName="Approach" />
+                  <ScalarProperty Name="Place" ParameterName="Place" />
+                  <ScalarProperty Name="Time" ParameterName="Time" />
+                  <ScalarProperty Name="Day" ParameterName="Day" />
+                  <ScalarProperty Name="Date" ParameterName="Date" />
+                  <ResultBinding Name="ID" ColumnName="ID" />
+                </InsertFunction>
+                <DeleteFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_Workout_Got_NumberDelete">
+                  <ScalarProperty Name="ID" ParameterName="ID" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Interviews">
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Interview">
+              <MappingFragment StoreEntitySet="Interviews">
+                <ScalarProperty Name="How_Ended" ColumnName="How_Ended" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Comp_URL" ColumnName="Comp_URL" />
+                <ScalarProperty Name="Comp_Number" ColumnName="Comp_Number" />
+                <ScalarProperty Name="Comp_Name" ColumnName="Comp_Name" />
+                <ScalarProperty Name="Pay" ColumnName="Pay" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Got_Job" ColumnName="Got_Job" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Improvements" ColumnName="Improvements" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Negotiation_Details" ColumnName="Negotiation_Details" />
+                <ScalarProperty Name="Tech_Q_A" ColumnName="Tech_Q_A" />
+                <ScalarProperty Name="Test_Details" ColumnName="Test_Details" />
+                <ScalarProperty Name="Interview_Type" ColumnName="Interview_Type" />
+                <ScalarProperty Name="Other_email" ColumnName="Other_email" />
+                <ScalarProperty Name="Other_Phone" ColumnName="Other_Phone" />
+                <ScalarProperty Name="Recuiter_email" ColumnName="Recuiter_email" />
+                <ScalarProperty Name="Recuiter_Phone" ColumnName="Recuiter_Phone" />
+                <ScalarProperty Name="HR_email" ColumnName="HR_email" />
+                <ScalarProperty Name="HR_Phone" ColumnName="HR_Phone" />
+                <ScalarProperty Name="Interview_email" ColumnName="Interview_email" />
+                <ScalarProperty Name="Interviewer_Phone" ColumnName="Interviewer_Phone" />
+                <ScalarProperty Name="Interviewer3_Role" ColumnName="Interviewer3_Role" />
+                <ScalarProperty Name="Interviewer3_Name" ColumnName="Interviewer3_Name" />
+                <ScalarProperty Name="Interviewer2_Role" ColumnName="Interviewer2_Role" />
+                <ScalarProperty Name="Interviewer2_Name" ColumnName="Interviewer2_Name" />
+                <ScalarProperty Name="Interviewer1_Role" ColumnName="Interviewer1_Role" />
+                <ScalarProperty Name="Interviewer1_Name" ColumnName="Interviewer1_Name" />
+                <ScalarProperty Name="Staffing" ColumnName="Staffing" />
+                <ScalarProperty Name="Lead_Source" ColumnName="Lead_Source" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Interview_Number" ColumnName="Interview_Number" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Interview">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_InterviewsInsert">
+                  <ScalarProperty Name="How_Ended" ParameterName="How_Ended" />
+                  <ScalarProperty Name="Duration" ParameterName="Duration" />
+                  <ScalarProperty Name="Comp_URL" ParameterName="Comp_URL" />
+                  <ScalarProperty Name="Comp_Number" ParameterName="Comp_Number" />
+                  <ScalarProperty Name="Comp_Name" ParameterName="Comp_Name" />
+                  <ScalarProperty Name="Pay" ParameterName="Pay" />
+                  <ScalarProperty Name="Position" ParameterName="Position" />
+                  <ScalarProperty Name="Got_Job" ParameterName="Got_Job" />
+                  <ScalarProperty Name="Notes" ParameterName="Notes" />
+                  <ScalarProperty Name="Improvements" ParameterName="Improvements" />
+                  <ScalarProperty Name="Comments" ParameterName="Comments" />
+                  <ScalarProperty Name="Details" ParameterName="Details" />
+                  <ScalarProperty Name="Negotiation_Details" ParameterName="Negotiation_Details" />
+                  <ScalarProperty Name="Tech_Q_A" ParameterName="Tech_Q_A" />
+                  <ScalarProperty Name="Test_Details" ParameterName="Test_Details" />
+                  <ScalarProperty Name="Interview_Type" ParameterName="Interview_Type" />
+                  <ScalarProperty Name="Other_email" ParameterName="Other_email" />
+                  <ScalarProperty Name="Other_Phone" ParameterName="Other_Phone" />
+                  <ScalarProperty Name="Recuiter_email" ParameterName="Recuiter_email" />
+                  <ScalarProperty Name="Recuiter_Phone" ParameterName="Recuiter_Phone" />
+                  <ScalarProperty Name="HR_email" ParameterName="HR_email" />
+                  <ScalarProperty Name="HR_Phone" ParameterName="HR_Phone" />
+                  <ScalarProperty Name="Interview_email" ParameterName="Interview_email" />
+                  <ScalarProperty Name="Interviewer_Phone" ParameterName="Interviewer_Phone" />
+                  <ScalarProperty Name="Interviewer3_Role" ParameterName="Interviewer3_Role" />
+                  <ScalarProperty Name="Interviewer3_Name" ParameterName="Interviewer3_Name" />
+                  <ScalarProperty Name="Interviewer2_Role" ParameterName="Interviewer2_Role" />
+                  <ScalarProperty Name="Interviewer2_Name" ParameterName="Interviewer2_Name" />
+                  <ScalarProperty Name="Interviewer1_Role" ParameterName="Interviewer1_Role" />
+                  <ScalarProperty Name="Interviewer1_Name" ParameterName="Interviewer1_Name" />
+                  <ScalarProperty Name="Staffing" ParameterName="Staffing" />
+                  <ScalarProperty Name="Lead_Source" ParameterName="Lead_Source" />
+                  <ScalarProperty Name="Place" ParameterName="Place" />
+                  <ScalarProperty Name="Time" ParameterName="Time" />
+                  <ScalarProperty Name="Day" ParameterName="Day" />
+                  <ScalarProperty Name="Interview_Number" ParameterName="Interview_Number" />
+                  <ScalarProperty Name="Date" ParameterName="Date" />
+                  <ResultBinding Name="ID" ColumnName="ID" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_InterviewsUpdate">
+                  <ScalarProperty Name="How_Ended" ParameterName="How_Ended" Version="Current" />
+                  <ScalarProperty Name="Duration" ParameterName="Duration" Version="Current" />
+                  <ScalarProperty Name="Comp_URL" ParameterName="Comp_URL" Version="Current" />
+                  <ScalarProperty Name="Comp_Number" ParameterName="Comp_Number" Version="Current" />
+                  <ScalarProperty Name="Comp_Name" ParameterName="Comp_Name" Version="Current" />
+                  <ScalarProperty Name="Pay" ParameterName="Pay" Version="Current" />
+                  <ScalarProperty Name="Position" ParameterName="Position" Version="Current" />
+                  <ScalarProperty Name="Got_Job" ParameterName="Got_Job" Version="Current" />
+                  <ScalarProperty Name="Notes" ParameterName="Notes" Version="Current" />
+                  <ScalarProperty Name="Improvements" ParameterName="Improvements" Version="Current" />
+                  <ScalarProperty Name="Comments" ParameterName="Comments" Version="Current" />
+                  <ScalarProperty Name="Details" ParameterName="Details" Version="Current" />
+                  <ScalarProperty Name="Negotiation_Details" ParameterName="Negotiation_Details" Version="Current" />
+                  <ScalarProperty Name="Tech_Q_A" ParameterName="Tech_Q_A" Version="Current" />
+                  <ScalarProperty Name="Test_Details" ParameterName="Test_Details" Version="Current" />
+                  <ScalarProperty Name="Interview_Type" ParameterName="Interview_Type" Version="Current" />
+                  <ScalarProperty Name="Other_email" ParameterName="Other_email" Version="Current" />
+                  <ScalarProperty Name="Other_Phone" ParameterName="Other_Phone" Version="Current" />
+                  <ScalarProperty Name="Recuiter_email" ParameterName="Recuiter_email" Version="Current" />
+                  <ScalarProperty Name="Recuiter_Phone" ParameterName="Recuiter_Phone" Version="Current" />
+                  <ScalarProperty Name="HR_email" ParameterName="HR_email" Version="Current" />
+                  <ScalarProperty Name="HR_Phone" ParameterName="HR_Phone" Version="Current" />
+                  <ScalarProperty Name="Interview_email" ParameterName="Interview_email" Version="Current" />
+                  <ScalarProperty Name="Interviewer_Phone" ParameterName="Interviewer_Phone" Version="Current" />
+                  <ScalarProperty Name="Interviewer3_Role" ParameterName="Interviewer3_Role" Version="Current" />
+                  <ScalarProperty Name="Interviewer3_Name" ParameterName="Interviewer3_Name" Version="Current" />
+                  <ScalarProperty Name="Interviewer2_Role" ParameterName="Interviewer2_Role" Version="Current" />
+                  <ScalarProperty Name="Interviewer2_Name" ParameterName="Interviewer2_Name" Version="Current" />
+                  <ScalarProperty Name="Interviewer1_Role" ParameterName="Interviewer1_Role" Version="Current" />
+                  <ScalarProperty Name="Interviewer1_Name" ParameterName="Interviewer1_Name" Version="Current" />
+                  <ScalarProperty Name="Staffing" ParameterName="Staffing" Version="Current" />
+                  <ScalarProperty Name="Lead_Source" ParameterName="Lead_Source" Version="Current" />
+                  <ScalarProperty Name="Place" ParameterName="Place" Version="Current" />
+                  <ScalarProperty Name="Time" ParameterName="Time" Version="Current" />
+                  <ScalarProperty Name="Day" ParameterName="Day" Version="Current" />
+                  <ScalarProperty Name="Interview_Number" ParameterName="Interview_Number" Version="Current" />
+                  <ScalarProperty Name="Date" ParameterName="Date" Version="Current" />
+                  <ScalarProperty Name="ID" ParameterName="ID" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_InterviewsDelete">
+                  <ScalarProperty Name="ID" ParameterName="ID" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Test_Date_Types">
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Test_Date_Types">
+              <MappingFragment StoreEntitySet="Test_Date_Types">
+                <ScalarProperty Name="Modifiers_Login" ColumnName="Modifiers_Login" />
+                <ScalarProperty Name="Mod_Time_datetime2" ColumnName="Mod_Time_datetime2" />
+                <ScalarProperty Name="Mod_Time_datetime" ColumnName="Mod_Time_datetime" />
+                <ScalarProperty Name="dt_timestamp" ColumnName="dt_timestamp" />
+                <ScalarProperty Name="dt_datetime2" ColumnName="dt_datetime2" />
+                <ScalarProperty Name="dt_datetime" ColumnName="dt_datetime" />
+                <ScalarProperty Name="dt_date" ColumnName="dt_date" />
+                <ScalarProperty Name="dt_time" ColumnName="dt_time" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Test_Date_Types">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_Test_Date_TypesInsert">
+                  <ScalarProperty Name="Modifiers_Login" ParameterName="Modifiers_Login" />
+                  <ScalarProperty Name="Mod_Time_datetime2" ParameterName="Mod_Time_datetime2" />
+                  <ScalarProperty Name="Mod_Time_datetime" ParameterName="Mod_Time_datetime" />
+                  <ScalarProperty Name="dt_datetime2" ParameterName="dt_datetime2" />
+                  <ScalarProperty Name="dt_datetime" ParameterName="dt_datetime" />
+                  <ScalarProperty Name="dt_date" ParameterName="dt_date" />
+                  <ScalarProperty Name="dt_time" ParameterName="dt_time" />
+                  <ScalarProperty Name="comments" ParameterName="comments" />
+                  <ResultBinding Name="ID" ColumnName="ID" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_Test_Date_TypesUpdate">
+                  <ScalarProperty Name="Modifiers_Login" ParameterName="Modifiers_Login" Version="Current" />
+                  <ScalarProperty Name="Mod_Time_datetime2" ParameterName="Mod_Time_datetime2" Version="Current" />
+                  <ScalarProperty Name="Mod_Time_datetime" ParameterName="Mod_Time_datetime" Version="Current" />
+                  <ScalarProperty Name="dt_datetime2" ParameterName="dt_datetime2" Version="Current" />
+                  <ScalarProperty Name="dt_datetime" ParameterName="dt_datetime" Version="Current" />
+                  <ScalarProperty Name="dt_date" ParameterName="dt_date" Version="Current" />
+                  <ScalarProperty Name="dt_time" ParameterName="dt_time" Version="Current" />
+                  <ScalarProperty Name="comments" ParameterName="comments" Version="Current" />
+                  <ScalarProperty Name="ID" ParameterName="ID" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_Test_Date_TypesDelete">
+                  <ScalarProperty Name="ID" ParameterName="ID" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Test_SQL_DataTypes">
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Test_SQL_DataTypes">
+              <MappingFragment StoreEntitySet="Test_SQL_DataTypes">
+                <ScalarProperty Name="dt_Numeric_10_3" ColumnName="dt_Numeric_10_3" />
+                <ScalarProperty Name="dt_Image" ColumnName="dt_Image" />
+                <ScalarProperty Name="dt_Money" ColumnName="dt_Money" />
+                <ScalarProperty Name="dt_Decimal_10_4" ColumnName="dt_Decimal_10_4" />
+                <ScalarProperty Name="dt_Bit" ColumnName="dt_Bit" />
+                <ScalarProperty Name="dt_Nvarchar_MAX_COMMENTS" ColumnName="dt_Nvarchar_MAX_COMMENTS" />
+                <ScalarProperty Name="dt_char_4" ColumnName="dt_char_4" />
+                <ScalarProperty Name="dt_Nvarchar" ColumnName="dt_Nvarchar" />
+                <ScalarProperty Name="dt_Varchar" ColumnName="dt_Varchar" />
+                <ScalarProperty Name="dt_datetime" ColumnName="dt_datetime" />
+                <ScalarProperty Name="dt_Time" ColumnName="dt_Time" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Test_DateTime2_GetDate">
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Test_DateTime2_GetDate">
+              <MappingFragment StoreEntitySet="Test_DateTime2_GetDate">
+                <ScalarProperty Name="comments_nulable" ColumnName="comments_nulable" />
+                <ScalarProperty Name="dt_datetime2_GetDate_nullable" ColumnName="dt_datetime2_GetDate_nullable" />
+                <ScalarProperty Name="Id_PK_not_seed_nullable" ColumnName="Id_PK_not_seed_nullable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Test_DateTime2_GetDate">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_Test_DateTime2_GetDateInsert">
+                  <ScalarProperty Name="comments_nulable" ParameterName="comments_nulable" />
+                  <ScalarProperty Name="dt_datetime2_GetDate_nullable" ParameterName="dt_datetime2_GetDate_nullable" />
+                  <ScalarProperty Name="Id_PK_not_seed_nullable" ParameterName="Id_PK_not_seed_nullable" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_Test_DateTime2_GetDateUpdate">
+                  <ScalarProperty Name="comments_nulable" ParameterName="comments_nulable" Version="Current" />
+                  <ScalarProperty Name="dt_datetime2_GetDate_nullable" ParameterName="dt_datetime2_GetDate_nullable" Version="Current" />
+                  <ScalarProperty Name="Id_PK_not_seed_nullable" ParameterName="Id_PK_not_seed_nullable" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_Test_DateTime2_GetDateDelete">
+                  <ScalarProperty Name="Id_PK_not_seed_nullable" ParameterName="Id_PK_not_seed_nullable" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LU_MachineClass">
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.LU_MachineClass">
+              <MappingFragment StoreEntitySet="LU_MachineClass">
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="ClassCode" ColumnName="ClassCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.LU_MachineClass">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_LU_MachineClassInsert">
+                  <ScalarProperty Name="Description" ParameterName="Description" />
+                  <ScalarProperty Name="Name" ParameterName="Name" />
+                  <ScalarProperty Name="ClassCode" ParameterName="ClassCode" />
+                  <ResultBinding Name="ID" ColumnName="ID" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_LU_MachineClassUpdate">
+                  <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+                  <ScalarProperty Name="Name" ParameterName="Name" Version="Current" />
+                  <ScalarProperty Name="ClassCode" ParameterName="ClassCode" Version="Current" />
+                  <ScalarProperty Name="ID" ParameterName="ID" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Action_Amusements_WinhostModel.Store.usp_LU_MachineClassDelete">
+                  <ScalarProperty Name="ClassCode" ParameterName="ClassCode" />
+                  <ScalarProperty Name="ID" ParameterName="ID" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Flagged_for_Deletion" ColumnName="Flagged_for_Deletion" />
+                <ScalarProperty Name="Data_Is_Dummy" ColumnName="Data_Is_Dummy" />
+                <ScalarProperty Name="Modifiers_Login" ColumnName="Modifiers_Login" />
+                <ScalarProperty Name="Record_Modify_Date" ColumnName="Record_Modify_Date" />
+                <ScalarProperty Name="Split_Percent" ColumnName="Split_Percent" />
+                <ScalarProperty Name="Tax_Percente_Other" ColumnName="Tax_Percente_Other" />
+                <ScalarProperty Name="Tax_Percente_County" ColumnName="Tax_Percente_County" />
+                <ScalarProperty Name="Tax_Percente_State" ColumnName="Tax_Percente_State" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Notes2" ColumnName="Notes2" />
+                <ScalarProperty Name="Notes1" ColumnName="Notes1" />
+                <ScalarProperty Name="Email_for_Sales_Report" ColumnName="Email_for_Sales_Report" />
+                <ScalarProperty Name="Location_Bar_Phone" ColumnName="Location_Bar_Phone" />
+                <ScalarProperty Name="Location_Office_Phone" ColumnName="Location_Office_Phone" />
+                <ScalarProperty Name="Owner_Email" ColumnName="Owner_Email" />
+                <ScalarProperty Name="Owner_Cell" ColumnName="Owner_Cell" />
+                <ScalarProperty Name="Owner_LastName" ColumnName="Owner_LastName" />
+                <ScalarProperty Name="Owner_FirstName" ColumnName="Owner_FirstName" />
+                <ScalarProperty Name="Contact2_Cell" ColumnName="Contact2_Cell" />
+                <ScalarProperty Name="Contact2_Email" ColumnName="Contact2_Email" />
+                <ScalarProperty Name="Contact2_Role" ColumnName="Contact2_Role" />
+                <ScalarProperty Name="Contact2_LastName" ColumnName="Contact2_LastName" />
+                <ScalarProperty Name="Contact2_FirstName" ColumnName="Contact2_FirstName" />
+                <ScalarProperty Name="Contact1_Cell" ColumnName="Contact1_Cell" />
+                <ScalarProperty Name="Contact1_Email" ColumnName="Contact1_Email" />
+                <ScalarProperty Name="Contact1_Role" ColumnName="Contact1_Role" />
+                <ScalarProperty Name="Contact1_LastName" ColumnName="Contact1_LastName" />
+                <ScalarProperty Name="Contact1_FirstName" ColumnName="Contact1_FirstName" />
+                <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State_Province_Territory" ColumnName="State_Province_Territory" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Loc_End_Date" ColumnName="Loc_End_Date" />
+                <ScalarProperty Name="Loc_Begin_Date" ColumnName="Loc_Begin_Date" />
+                <ScalarProperty Name="Acc_Code" ColumnName="Acc_Code" />
+                <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+                <ScalarProperty Name="Location_Name" ColumnName="Location_Name" />
+                <ScalarProperty Name="Location_ID" ColumnName="Location_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accs">
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Acc">
+              <MappingFragment StoreEntitySet="Acc">
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Flagged_for_Deletion" ColumnName="Flagged_for_Deletion" />
+                <ScalarProperty Name="Data_Is_Dummy" ColumnName="Data_Is_Dummy" />
+                <ScalarProperty Name="Modifiers_Login" ColumnName="Modifiers_Login" />
+                <ScalarProperty Name="Record_Modify_Date" ColumnName="Record_Modify_Date" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="POC_Cell" ColumnName="POC_Cell" />
+                <ScalarProperty Name="POC_Email" ColumnName="POC_Email" />
+                <ScalarProperty Name="POC_Role" ColumnName="POC_Role" />
+                <ScalarProperty Name="POC_LastName" ColumnName="POC_LastName" />
+                <ScalarProperty Name="POC_FirstName" ColumnName="POC_FirstName" />
+                <ScalarProperty Name="Other_Office_Fax" ColumnName="Other_Office_Fax" />
+                <ScalarProperty Name="Other_Office_Phone" ColumnName="Other_Office_Phone" />
+                <ScalarProperty Name="Acc_Office_Fax" ColumnName="Acc_Office_Fax" />
+                <ScalarProperty Name="Acc_Office_Phone" ColumnName="Acc_Office_Phone" />
+                <ScalarProperty Name="Owner_Email" ColumnName="Owner_Email" />
+                <ScalarProperty Name="Owner_Cell" ColumnName="Owner_Cell" />
+                <ScalarProperty Name="Owner_LastName" ColumnName="Owner_LastName" />
+                <ScalarProperty Name="Owner_FirstName" ColumnName="Owner_FirstName" />
+                <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State_Province_Territory" ColumnName="State_Province_Territory" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Acc_Details" ColumnName="Acc_Details" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+                <ScalarProperty Name="Begin_Date" ColumnName="Begin_Date" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Acc_Code" ColumnName="Acc_Code" />
+                <ScalarProperty Name="Acc_Name" ColumnName="Acc_Name" />
+                <ScalarProperty Name="Acc_ID" ColumnName="Acc_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Machines">
+            <EntityTypeMapping TypeName="Action_Amusements_WinhostModel.Machine">
+              <MappingFragment StoreEntitySet="Machine">
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Flagged_for_Deletion" ColumnName="Flagged_for_Deletion" />
+                <ScalarProperty Name="Data_Is_Dummy" ColumnName="Data_Is_Dummy" />
+                <ScalarProperty Name="Modifiers_Login" ColumnName="Modifiers_Login" />
+                <ScalarProperty Name="Record_Modify_Date" ColumnName="Record_Modify_Date" />
+                <ScalarProperty Name="Location_Code" ColumnName="Location_Code" />
+                <ScalarProperty Name="Machine_Comments" ColumnName="Machine_Comments" />
+                <ScalarProperty Name="Machine_Notes" ColumnName="Machine_Notes" />
+                <ScalarProperty Name="Machine_Count_Order" ColumnName="Machine_Count_Order" />
+                <ScalarProperty Name="External_Key" ColumnName="External_Key" />
+                <ScalarProperty Name="Keys_4" ColumnName="Keys_4" />
+                <ScalarProperty Name="Keys_3" ColumnName="Keys_3" />
+                <ScalarProperty Name="Keys_2" ColumnName="Keys_2" />
+                <ScalarProperty Name="Keys_1" ColumnName="Keys_1" />
+                <ScalarProperty Name="Warranty_Expiration_Date" ColumnName="Warranty_Expiration_Date" />
+                <ScalarProperty Name="Warranty_Details" ColumnName="Warranty_Details" />
+                <ScalarProperty Name="Additional_Costs_Details" ColumnName="Additional_Costs_Details" />
+                <ScalarProperty Name="Additional_Cost" ColumnName="Additional_Cost" />
+                <ScalarProperty Name="Shipping_Costs" ColumnName="Shipping_Costs" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Serial" ColumnName="Serial" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Purchase_Details" ColumnName="Purchase_Details" />
+                <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+                <ScalarProperty Name="Purchased_From" ColumnName="Purchased_From" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Machine_Owner_LastName" ColumnName="Machine_Owner_LastName" />
+                <ScalarProperty Name="Machine_Owner_FirstName" ColumnName="Machine_Owner_FirstName" />
+                <ScalarProperty Name="Machine_Class" ColumnName="Machine_Class" />
+                <ScalarProperty Name="Machine_Name" ColumnName="Machine_Name" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Machine_ID" ColumnName="Machine_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model" ZoomLevel="64" DisplayType="true">
+        <EntityTypeShape EntityType="Action_Amusements_WinhostModel.WorkOut" Width="3" PointX="8.25" PointY="17.625" Height="5.9371956380208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Action_Amusements_WinhostModel.Workout_Got_Number" Width="2.875" PointX="4.75" PointY="17.625" Height="7.2636523437500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="Action_Amusements_WinhostModel.Interview" Width="2.875" PointX="1.5" PointY="17.75" Height="8.2111214192708353" IsExpanded="true" />
+        <EntityTypeShape EntityType="Action_Amusements_WinhostModel.Test_Date_Types" Width="3" PointX="11.625" PointY="17.75" Height="2.9052945963541674" />
+        <EntityTypeShape EntityType="Action_Amusements_WinhostModel.Test_SQL_DataTypes" Width="1.5" PointX="15.75" PointY="20.125" Height="3.2842822265625031" />
+        <EntityTypeShape EntityType="Action_Amusements_WinhostModel.Test_DateTime2_GetDate" Width="3.125" PointX="14.875" PointY="17.625" Height="1.5788378906250031" />
+        <EntityTypeShape EntityType="Action_Amusements_WinhostModel.LU_MachineClass" Width="2.625" PointX="11.25" PointY="3.375" Height="2.1473193359375" />
+        <EntityTypeShape EntityType="Action_Amusements_WinhostModel.Location" Width="1.5" PointX="4.125" PointY="1.75" Height="9.3480843098958353" />
+        <EntityTypeShape EntityType="Action_Amusements_WinhostModel.Acc" Width="1.5" PointX="1.375" PointY="3.875" Height="7.4531461588541745" />
+        <EntityTypeShape EntityType="Action_Amusements_WinhostModel.Machine" Width="1.5" PointX="7.75" PointY="1.75" Height="7.4531461588541674" />
+        <AssociationConnector Association="Action_Amusements_WinhostModel.FK_Location_Acc" >
+          <ConnectorPoint PointX="2.875" PointY="7.4865421549479176" />
+          <ConnectorPoint PointX="4.125" PointY="7.4865421549479176" />
+        </AssociationConnector>
+        <AssociationConnector Association="Action_Amusements_WinhostModel.FK_Machine_Location" >
+          <ConnectorPoint PointX="5.625" PointY="5.4765730794270837" />
+          <ConnectorPoint PointX="7.75" PointY="5.4765730794270837" />
+        </AssociationConnector>
+        <AssociationConnector Association="Action_Amusements_WinhostModel.FK_Machine_LU_MachineClass" >
+          <ConnectorPoint PointX="11.25" PointY="4.44865966796875" />
+          <ConnectorPoint PointX="9.25" PointY="4.44865966796875" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

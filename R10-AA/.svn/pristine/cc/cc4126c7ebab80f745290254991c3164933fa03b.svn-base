@@ -1,0 +1,99 @@
+Key= S appended to something means it should be a setting Constant
+
+Alias | Machine Name     | Bills(highlight )  | Cents(highlight |  Bills_MeterOLD  |  Bills_MeterNEW   |  Cents_MeterOLD   | Cents_MeterNEW    |  U_Old    |   U_New  | Cost Per Unit |  Units Added | Adj1| Adj2 |Total Adjs |  Total
+Cr21     Treasue Crane                60                   40	                     10000	                     10200                10000  	                    10200	               1000          1050     	          1.5SC         30                  0        0       
+
+Calculate OnClick
+
+Class 3 AlgoRhythm
+1. C# Meter Flipper over Check -
+//Declare Vars
+
+ If (Bills_MeterOLD.value  > Bills_MeterNew,value) 
+{
+	Bills_MeterNew= Biils_MeterNew + 1,000,000SC 		//Note*(not 999999 becuase 000000 counts for 1)
+}
+ If (Cents_MeterOLD  > Cents_MeterNew) 
+{
+	Cents_MeterNew= Cents_MeterNew + 1,000,000SC 	//Note*(not 999999 becuase 000000 counts for 1)
+}
+ If (U_OLD  > U_New) 
+{
+    	U_New= U_New + 1,000,000SC  Note*(not 999999 becuase 000000 counts for 1)
+}
+ 
+2.C# - Calculate
+
+//Declare variables
+Curreny 	Bills, Cents, Cost_per_Unit, adj1 adj2, Total Adj, Total, Bills_Meter_Dollars, Cents_Meter_Dollars
+Int 	Units, U_OLD, U_NEW, Cost_Per_Units
+
+//Get Units
+Units = U_NEW  - U_Old
+50     = 	1050  -   1000
+
+//Convert meter counts to dollars
+ Bills_Meter_Dollars = CAST(   (($_MeterNew - $_MeterOLD)   /   4 )            As Currency)//ENDCAST
+	50                                                200                       
+Cents_Meter_Dollars = CAST(  ((C_MeterNEW - C_MeterOLD )  *  .4)            AS Currency)//ENDCAST
+	50			  200
+Total = Cast(    bills + cents - (  iif(   ((units * 1.5 ))            <=   ((   bills + cents)  * .3333 ) ) )   ,   (units * 1.5 )   else , (   bills + cents)  * .3333)       /*endIIf)*/ )       /*endPar*/ )          As Currency)//ENDCAST
+65		100                     50      * 1.5 = 35	     <=	    33.33 FALSE		USE 35.00		33.33
+spanTotalAdjustments.value = (((bills + cents) - total)           +    (txtAdj1.value + txtAdj2.value))
+	35	                           100             - 65  =35     +            0              +        0           
+spanTotal.value =  Total - (txtAdj1.value + txtAdj2.value)
+		65     -   (           0           +             0  )
+3..JQUERY -highlist Bills actual AND/OR Coins_Actual red if under, green if over
+
+           
+$Document.Ready{function()
+
+      Calculate_OnClick{function()
+
+	//Convert meter counts to dollars
+	var Bills_Meter_Dollars =   (($_MeterNew - $_MeterOLD)   /   4 )            
+	        50                                                200                       
+	var Cents_Meter_Dollars =  ((C_MeterNEW - C_MeterOLD )  *  .4) 
+  	       50			            200
+    	
+	//Bills
+	if  ($('# divBillsActual').value > Bills_Meter_Dollars)
+	{		60          >       50     TRUE
+		$('# divsBillsActual').CSS(Background:lightRed);//Turns LightRed
+	}
+	else if  ($('# divBillsActual').value < Bills_Meter_Dollars)
+	{                    60            <         50    FALSE                                           
+		$('# divBillsActual').CSS(Background:Green);
+	}
+	//Cents
+	if  ($('# divCentsActual').value > Cents_Meter_Dollars)
+ 	 {                               40            >      50  FALSE
+	    $('# divCentsActual').CSS(Background:LightRed);
+	}
+	else if  ($('# divCentsActual').value < Cents_Meter_Dollars)
+	{	40            <     50  True
+		$('# divCentsActual').CSS(Background:Green);  //turns Green
+	}
+       });//end OnClick
+});//End Doc Ready
+
+
+AlgoRythm  Summary
+//Jquery
+$Document.Ready{function()
+	Calculate_OnClick{function(){
+		If(txtTaxState==0 AND txtState != null)
+		{
+		$('# divSettingsConstants').append
+		}
+
+	});
+1. only create 3 tax spans if txtTaxes are not null or 0
+If
+currency CoinsIn, 
+spanCoins.value
+
+
+
+
+Total = Cast(bills + cents - (IIF(((units * 1.5)) <= ((bills + cents)  * .3333))) , (units * 1.5)  ELSE  (bills + cents)  * .3333))) As Currency)

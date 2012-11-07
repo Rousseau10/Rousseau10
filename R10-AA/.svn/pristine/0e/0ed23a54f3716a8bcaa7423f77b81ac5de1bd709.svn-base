@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="reset.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+  
+<body>
+<div id="wrap">
+  <div id="header">
+    <ul id="nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Count</a></li>
+      <li><a href="#">Sales Reports</a></li>
+      <li><a href="#">Accounting Reports</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Contact us</a></li>
+      
+      <li class="last"><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <!-- /header -->
+  <div id="content">
+    <div id="inner">
+      <div class="left float-l">
+        <h2>Total Management System for Amusement Machine Operators.</h2>
+        <div class="float-l"><img src="images/hand_and_laptop_red.gif" alt="image loading..." /></div>
+       
+      </div>
+      <div class="right folat-r">
+        <div id="side">
+          <div id="top">
+            <h2>Features</h2>
+            <ul class="meun">
+              <li><a href="#">- Enter count data on site</a></li>
+              <li><a href="#">- Create printable sales report</a></li>
+              <li><a href="#">- Works with mobile phones</a></li>
+              <li><a href="#">- Generates business reports</a></li>
+              <li><a href="#">- Store all biz data</a></li>
+            </ul>
+          </div>
+          <div id="bm">
+            <h2>Benefits</h2>
+            <ul class="meun" ul-font-size">
+              <li><a href="#">- Enjoy access to this web  based system  from anywhere</a></li>
+              <li><a href="#">- Easily calculate and print &nbsp&nbsp&nbsp sales report on location</a></li>
+              <li><a href="#">- Make better business  &nbsp&nbsp&nbsp decisions with sophisticated reports</a></li>
+              <li><a href="#">- Have the convenience of &nbsp&nbsp&nbsp using the mobile version
+               &nbsp&nbsp&nbsp to collect data and &nbsp&nbsp&nbsp print to a hand-held mobile&nbsp&nbsp&nbsp printer or a wireless &nbsp printer on location</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /content -->
+  <div id="footer">
+    <div class="ft">
+      <div id="ftlink"> <a href="#">Home</a> | <a href="#">About Us</a> | <a href="#">Contact</a> | <a href="#">Feedback</a> </div>
+      <p id="copyright">© 2012. All Rights Reserved. <br/>
+      <p id="rousseau10">This site was developed and is maintained by Rousseau10 Consulting. <br/></p>
+    </div>
+    
+  </div>
+  <!-- /footer -->
+</div>
+</body>
+</html>

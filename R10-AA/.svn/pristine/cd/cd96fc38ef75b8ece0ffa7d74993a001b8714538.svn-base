@@ -1,0 +1,39 @@
+﻿@model R10.Models.Test_DateTime2_GetDate
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Test_DateTime2_GetDate</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Id_PK_not_seed_nullable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id_PK_not_seed_nullable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dt_datetime2_GetDate_nullable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dt_datetime2_GetDate_nullable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.comments_nulable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.comments_nulable)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

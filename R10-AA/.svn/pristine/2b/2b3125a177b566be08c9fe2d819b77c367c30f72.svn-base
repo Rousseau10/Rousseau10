@@ -1,0 +1,106 @@
+﻿@model IEnumerable<R10.Models.Workout_Got_Number>
+
+@foreach (var item in Model) {
+    <tr data-pkey="@item.ID">
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Place)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Method)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_Detials)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Drink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Smoke)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Card)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Get_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Touch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Improve)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Com)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nick)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeAdd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkAdd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NonVacAdd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BornIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Money)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eyes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Smoker)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td class="rowControl hidden">
+            <a href="#makeRowEditable" class="makeRowEditable">Edit</a> |
+            <a href="#deleteRow" class="deleteRow">Delete</a>
+        </td>
+    </tr>
+}
